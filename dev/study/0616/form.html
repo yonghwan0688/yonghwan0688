@@ -32,7 +32,58 @@
                 <label for="age">나이</label>
                 <input type="number" id="age" name="age" placeholder="나이를 입력해주세요"/>
             </li>
+            <li>
+              <label for="subscribe">구독하기</label>
+              <input type="checkbox" name="subscribe"/>
+              <label for="subscribe">구독하기2</label>
+              <input type="checkbox" name="subscribe"/>
+              <label for="subscribe">구독하기3</label>
+              <input type="checkbox" name="subscribe"/>
+            </li>
+            <li>
+              <label><input type="radio" name="gender" value="male"/>남자</label>
+              <label><input type="radio" name="gender" value="female"/>여자</label>
+              <label><input type="radio" name="gender" value="female"/>여자2</label>
+              <label><input type="radio" name="gender" value="female"/>여자3</label>
+            </li>
+            <li>
+              <input type="file" name="file"/>
+              <input type="date" name="date"/>
+              <input type="range" name="range" min="0" max="100"/>
+              <input type="color" name="color">
+            </li>
+            <li>
+              <label for="country">Select your country</label>
+              <select name="country" id="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+              </select>
+            </li>
+            <li>
+              <label for="message">Your Message:</label>
+              <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message here"></textarea>
+            </li>
+            <li>
+              <button type="submit">Submit</button>
+            </li>
           </ul>
+        </fieldset>
+    </form>
+    <form method="get">
+      <fieldset>
+        <legend>Contact</legend>
+          <label>Name:</label>
+          <input type="text" id="contact-name" name="contact-name" placeholder="이름을 입력하세요."/>  
+          <br><br>
+          <label>Email:</label>
+          <input type="text" id="contact-email" name="contact-email" placeholder="이메일을 입력하세요."/>  
+          <br><br>
+          <label>Message:</label>
+          <textarea id="contact-message" name="contact-message" placeholder="메시지를 입력하세요."></textarea>
+          <br><br>
+        <button type="submit">Send your message</button>
+      </fieldset> 
     </form>
   </body>
 </html>

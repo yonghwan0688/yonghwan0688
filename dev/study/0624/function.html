@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수예제</title>
+</head>
+<body>
+    <script>
+    //    function greet() {
+    //     alert("반갑습니다.");
+    //    }
+    //    greet();
+
+    //    function showName() {
+    //     let name = "홍길동";
+    //     name = "이순신";
+    //     console.log(name);
+    //    }
+    //    showName();
+
+    //    console.log("outer", name);
+
+    // function add(a, b) {
+    //     return a + b;
+    // }
+    // let sum = add(3, 5);
+    // console.log(sum);
+
+    // BMI 계산기
+
+    weight = Number(prompt('몸무게를 입력하세요.'));
+    height = Number(prompt('키를 입력하세요.'));
+    
+    function bmiCalc(weight, height) {
+        return weight / (height * height);
+    }
+
+    let BMI = bmiCalc(weight, height).toFixed(2);
+
+    console.log(`당신의 BMI지수는 ${BMI}입니다.`);
+
+    </script>
+</body>
+</html>

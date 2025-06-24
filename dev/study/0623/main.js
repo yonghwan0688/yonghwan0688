@@ -3,7 +3,7 @@
 // document.write("<h1>Document Write<h1>");
 
 // let currentYear = 2025;
-// let birthYear = prompt("태어난 연도를 입력하세요.")
+// let birthYear = prompt("태어난 연도를 입력하세요.");
 // let age = currentYear - birthYear + 1;
 // alert("당신의 나이는 " + age + "살입니다.");
 
@@ -29,7 +29,7 @@
 // console.log(a);
 // a += 5;
 // console.log(a);
-// a-= 3;
+// a -= 3;
 // console.log(a);
 // a *= 2;
 // console.log(a);
@@ -80,23 +80,22 @@
 // let side = 4;
 // alert(side*side);
 
-let number = 7;
-    if (number % 2 === 0) {
-        console.log("짝수입니다.");
-    } else {
-        console.log("홀수입니다.");
-        }
+// let number = 7;
+//     if (number % 2 === 0) {
+//         console.log("짝수입니다.");
+//     } else {
+//         console.log("홀수입니다.");
+//         }
 
-let age = 16;
-    if(age < 19) {
-        console.log("미성년자입니다.");
-    } else{
-        console.log("성인입니다.");
-    }
+// let age = 16;
+//     if(age < 19) {
+//         console.log("미성년자입니다.");
+//     } else{
+//         console.log("성인입니다.");
+//     }
 
-let password = "1234";
-let input = "1234"
+// let password = "1234";
+// let input = "1234"
 
-    if (password === input) alert("로그인 성공");
-    else alert("로그인 실패");
-
+//     if (password === input) alert("로그인 성공");
+//     else alert("로그인 실패");

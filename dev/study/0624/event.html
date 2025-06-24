@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 예제</title>
+</head>
+<body>
+    <img id="pic" src="image1.jfif" alt="">
+    <br>
+    <button onclick="togglePic()">이미지 바꾸기</button>
+    <button id="myBtn">이미지 바꾸기2</button>
+    <script>
+        let toggle = true;
+        function togglePic() {
+            const pic = document.getElementById("pic");
+            if(toggle) {
+                pic.src = "image2.jfif";
+                toggle = false;
+            } else {
+                pic.src = "image1.jfif";
+                toggle = true;
+            }        
+        }
+        let myBtn = document.getElementById("myBtn");
+        myBtn.addEventListener("mouseover", togglePic);
+    </script>
+</body>
+</html>

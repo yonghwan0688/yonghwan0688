@@ -1,0 +1,23 @@
+        /* 화면 꾸미기 (CSS) */
+        body {
+            font-family: 'Malgun Gothic', sans-serif; /* 맑은 고딕 글꼴 사용 */
+            text-align: center; /* 모든 글자 가운데 정렬 */
+            margin-top: 50px; /* 위쪽 여백 주기 */
+        }
+        .ball {
+            display: inline-block; /* 공들을 한 줄에 나란히 놓기 */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* 동그랗게 만들기 */
+            background-color: #eee; /* 기본 공 색깔 (회색) */
+            line-height: 50px; /* 글자를 공 세로 중앙에 오게 */
+            font-size: 20px;
+            font-weight: bold;
+            margin: 5px; /* 공들 사이에 약간의 여백 */
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer; /* 마우스를 올리면 손가락 모양으로 */
+        }

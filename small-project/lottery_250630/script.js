@@ -30,6 +30,7 @@ function drawNumbers() {
     모든숫자.sort(function(a, b) { return a - b; });
     
     let 공들 = document.querySelectorAll('.ball');
+    
     공들[0].textContent = 모든숫자[0];
     공들[1].textContent = 모든숫자[1];
     공들[2].textContent = 모든숫자[2];

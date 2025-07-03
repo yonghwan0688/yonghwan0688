@@ -48,23 +48,23 @@
 // account.getBalance();
 
 // 4번문제
-class Animal {
-  sound: string;
-  makeSound() {
-    console.log(`${this.sound}!`);
-  }
-}
+// class Animal {
+//   sound: string;
+//   makeSound() {
+//     console.log(`${this.sound}!`);
+//   }
+// }
 
-class Dog extends Animal {
-  sound: string = "멍멍";
-}
+// class Dog extends Animal {
+//   sound: string = "멍멍";
+// }
 
-class Cat extends Animal {
-  sound: string = "야옹";
-}
+// class Cat extends Animal {
+//   sound: string = "야옹";
+// }
 
-const cat = new Cat();
-const dog = new Dog();
+// const cat = new Cat();
+// const dog = new Dog();
 
-cat.makeSound();
-dog.makeSound();
+// cat.makeSound();
+// dog.makeSound();

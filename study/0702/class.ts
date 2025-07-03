@@ -30,7 +30,7 @@ class Car implements Vehicle {
     console.log("Wipe");
   }
 
-  break() {
+  brake() {
     console.log("Break");
   }
 
@@ -68,7 +68,7 @@ class Bus extends Car {
 }
 
 interface Vehicle {
-  break(): void;
+  brake(): void;
   accelerate(): void;
   trunk(): void;
 }

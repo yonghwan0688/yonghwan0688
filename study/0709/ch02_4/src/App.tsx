@@ -5,6 +5,7 @@ import EventListener from "./pages/EventListener";
 import ReactOnClick from "./pages/ReactOnClick";
 import EventBubbling from "./pages/EventBubbling";
 import FileInput from "./pages/FileInput";
+import DragDrop from "./pages/DragDrop";
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       {/* <EventListener /> */}
       {/* <ReactOnClick /> */}
       {/* <EventBubbling /> */}
-      <FileInput />
+      {/* <FileInput /> */}
+      <DragDrop />
     </div>
   );
 }

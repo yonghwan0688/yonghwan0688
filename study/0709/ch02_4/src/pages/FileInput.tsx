@@ -13,7 +13,7 @@ export default function FileInput() {
   return (
     <div>
       <p>FileInput</p>
-      <input type="file" onChange={onChange} multiple accept="image/*" />
+      <input type="file" onChange={onChange} multiple accept="*" />
     </div>
   );
 }

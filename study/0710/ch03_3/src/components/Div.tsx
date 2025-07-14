@@ -21,6 +21,10 @@ export const Div: FC<DivProps> = ({
   style: _style,
   className: _className,
   src,
+  left,
+  right,
+  top,
+  bottom,
   ...props
 }) => {
   const style = {

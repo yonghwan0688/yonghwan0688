@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { DivProps } from "../components";
 import * as D from "../data";
-import { Avatar } from "../components";
+import { Avatar, Div } from "../components";
 
 export type UserProps = DivProps & {
   user: D.IUser;

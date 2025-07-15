@@ -48,7 +48,7 @@
     "@types/chance": "^1.1.6",
     "@types/luxon": "^3.3.6",
     "autoprefixer": "^10.4.16",
-    "daisyui": "^4.4.17",
+    "daisyui": "4.12.12",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.5"
   }

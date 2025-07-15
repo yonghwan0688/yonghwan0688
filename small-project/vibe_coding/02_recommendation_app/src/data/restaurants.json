@@ -1,0 +1,196 @@
+{
+  "restaurants": [
+    {
+      "id": "rest_001",
+      "name": "김밥천국 강남점",
+      "category": "한식",
+      "cuisine": "김밥/분식",
+      "rating": 4.2,
+      "priceRange": 1,
+      "location": {
+        "lat": 37.4979,
+        "lng": 127.0276,
+        "address": "서울 강남구 강남대로 지하 396"
+      },
+      "openHours": {
+        "monday": { "open": "06:00", "close": "23:00" },
+        "tuesday": { "open": "06:00", "close": "23:00" },
+        "wednesday": { "open": "06:00", "close": "23:00" },
+        "thursday": { "open": "06:00", "close": "23:00" },
+        "friday": { "open": "06:00", "close": "23:00" },
+        "saturday": { "open": "07:00", "close": "22:00" },
+        "sunday": { "open": "07:00", "close": "22:00" }
+      },
+      "tags": ["든든한", "빠른", "저렴한"],
+      "weatherSuitable": ["rainy", "cloudy", "sunny"]
+    },
+    {
+      "id": "rest_002",
+      "name": "스타벅스 역삼점",
+      "category": "카페",
+      "cuisine": "커피/디저트",
+      "rating": 4.1,
+      "priceRange": 2,
+      "location": {
+        "lat": 37.4996,
+        "lng": 127.0364,
+        "address": "서울 강남구 역삼로 지하 180"
+      },
+      "openHours": {
+        "monday": { "open": "06:30", "close": "22:00" },
+        "tuesday": { "open": "06:30", "close": "22:00" },
+        "wednesday": { "open": "06:30", "close": "22:00" },
+        "thursday": { "open": "06:30", "close": "22:00" },
+        "friday": { "open": "06:30", "close": "22:00" },
+        "saturday": { "open": "07:00", "close": "21:00" },
+        "sunday": { "open": "07:00", "close": "21:00" }
+      },
+      "tags": ["시원한", "달콤한", "가벼운"],
+      "weatherSuitable": ["hot", "sunny", "cloudy"]
+    },
+    {
+      "id": "rest_003",
+      "name": "본죽 선릉점",
+      "category": "한식",
+      "cuisine": "죽/백반",
+      "rating": 4.3,
+      "priceRange": 2,
+      "location": {
+        "lat": 37.5044,
+        "lng": 127.0495,
+        "address": "서울 강남구 선릉로 521"
+      },
+      "openHours": {
+        "monday": { "open": "07:00", "close": "22:00" },
+        "tuesday": { "open": "07:00", "close": "22:00" },
+        "wednesday": { "open": "07:00", "close": "22:00" },
+        "thursday": { "open": "07:00", "close": "22:00" },
+        "friday": { "open": "07:00", "close": "22:00" },
+        "saturday": { "open": "08:00", "close": "21:00" },
+        "sunday": { "open": "08:00", "close": "21:00" }
+      },
+      "tags": ["뜨거운", "부드러운", "건강한"],
+      "weatherSuitable": ["cold", "rainy", "cloudy"]
+    },
+    {
+      "id": "rest_004",
+      "name": "맥도날드 강남역점",
+      "category": "패스트푸드",
+      "cuisine": "버거/치킨",
+      "rating": 3.8,
+      "priceRange": 2,
+      "location": {
+        "lat": 37.498,
+        "lng": 127.0276,
+        "address": "서울 강남구 강남대로 390"
+      },
+      "openHours": {
+        "monday": { "open": "24시간", "close": "24시간" },
+        "tuesday": { "open": "24시간", "close": "24시간" },
+        "wednesday": { "open": "24시간", "close": "24시간" },
+        "thursday": { "open": "24시간", "close": "24시간" },
+        "friday": { "open": "24시간", "close": "24시간" },
+        "saturday": { "open": "24시간", "close": "24시간" },
+        "sunday": { "open": "24시간", "close": "24시간" }
+      },
+      "tags": ["빠른", "든든한", "기름진"],
+      "weatherSuitable": ["sunny", "cloudy", "rainy"]
+    },
+    {
+      "id": "rest_005",
+      "name": "신전떡볶이 역삼점",
+      "category": "분식",
+      "cuisine": "떡볶이/튀김",
+      "rating": 4.4,
+      "priceRange": 1,
+      "location": {
+        "lat": 37.5012,
+        "lng": 127.0396,
+        "address": "서울 강남구 역삼로 166"
+      },
+      "openHours": {
+        "monday": { "open": "11:00", "close": "23:00" },
+        "tuesday": { "open": "11:00", "close": "23:00" },
+        "wednesday": { "open": "11:00", "close": "23:00" },
+        "thursday": { "open": "11:00", "close": "23:00" },
+        "friday": { "open": "11:00", "close": "24:00" },
+        "saturday": { "open": "11:00", "close": "24:00" },
+        "sunday": { "open": "11:00", "close": "23:00" }
+      },
+      "tags": ["매운", "뜨거운", "자극적인"],
+      "weatherSuitable": ["cold", "rainy", "cloudy"]
+    },
+    {
+      "id": "rest_006",
+      "name": "설빙 강남점",
+      "category": "디저트",
+      "cuisine": "빙수/아이스크림",
+      "rating": 4.0,
+      "priceRange": 2,
+      "location": {
+        "lat": 37.4983,
+        "lng": 127.028,
+        "address": "서울 강남구 강남대로 382"
+      },
+      "openHours": {
+        "monday": { "open": "11:00", "close": "23:00" },
+        "tuesday": { "open": "11:00", "close": "23:00" },
+        "wednesday": { "open": "11:00", "close": "23:00" },
+        "thursday": { "open": "11:00", "close": "23:00" },
+        "friday": { "open": "11:00", "close": "24:00" },
+        "saturday": { "open": "11:00", "close": "24:00" },
+        "sunday": { "open": "11:00", "close": "23:00" }
+      },
+      "tags": ["시원한", "달콤한", "상큼한"],
+      "weatherSuitable": ["hot", "sunny"]
+    },
+    {
+      "id": "rest_007",
+      "name": "이차돌 선릉점",
+      "category": "한식",
+      "cuisine": "고기/구이",
+      "rating": 4.5,
+      "priceRange": 3,
+      "location": {
+        "lat": 37.5048,
+        "lng": 127.0493,
+        "address": "서울 강남구 선릉로 511"
+      },
+      "openHours": {
+        "monday": { "open": "11:30", "close": "22:00" },
+        "tuesday": { "open": "11:30", "close": "22:00" },
+        "wednesday": { "open": "11:30", "close": "22:00" },
+        "thursday": { "open": "11:30", "close": "22:00" },
+        "friday": { "open": "11:30", "close": "23:00" },
+        "saturday": { "open": "11:30", "close": "23:00" },
+        "sunday": { "open": "11:30", "close": "22:00" }
+      },
+      "tags": ["든든한", "고소한", "기름진"],
+      "weatherSuitable": ["cold", "cloudy", "rainy"]
+    },
+    {
+      "id": "rest_008",
+      "name": "서브웨이 역삼역점",
+      "category": "패스트푸드",
+      "cuisine": "샌드위치",
+      "rating": 4.1,
+      "priceRange": 2,
+      "location": {
+        "lat": 37.5006,
+        "lng": 127.0368,
+        "address": "서울 강남구 역삼로 지하 188"
+      },
+      "openHours": {
+        "monday": { "open": "07:00", "close": "22:00" },
+        "tuesday": { "open": "07:00", "close": "22:00" },
+        "wednesday": { "open": "07:00", "close": "22:00" },
+        "thursday": { "open": "07:00", "close": "22:00" },
+        "friday": { "open": "07:00", "close": "22:00" },
+        "saturday": { "open": "08:00", "close": "21:00" },
+        "sunday": { "open": "08:00", "close": "21:00" }
+      },
+      "tags": ["가벼운", "건강한", "신선한"],
+      "weatherSuitable": ["sunny", "cloudy", "hot"]
+    }
+  ]
+}

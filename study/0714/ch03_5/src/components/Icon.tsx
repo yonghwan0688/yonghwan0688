@@ -1,15 +1,12 @@
-import type { FC } from "react";
+import type {FC, DetailedHTMLProps, HTMLAttributes} from 'react'
+type ReactSpanProps = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
 
-export type IconProps = {
-  name: string;
-  className?: string;
-  style?: React.CSSProperties;
-};
+export type IconProps = ReactSpanProps & {
+  name: string
+}
 
-export const Icon: FC<IconProps> = ({ name, className = "", style = {} }) => {
-  return (
-    <span className={`material-icons ${className}`} style={style}>
-      {name}
-    </span>
-  );
-};
+// prettier-ignore
+export const Icon: FC<IconProps> = ({name, className: _className, ...props}) => {
+  const className = ['material-icons', _className].join(' ')
+  return <span {...props} className={className}>{name}</span>
+}

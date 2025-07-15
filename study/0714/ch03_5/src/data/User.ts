@@ -1,21 +1,18 @@
-import * as C from "./chance";
-import * as I from "./image";
+import * as C from './chance'
+import * as I from './image'
 
 export type IUser = {
-  uuid: string;
-  name: string;
-  jobTitle: string;
-  email: string;
-  avatar: string;
-};
-
-export const makeUser = (
-  uuid: string,
-  name: string,
-  jobTitle: string,
-  email: string,
+  uuid: string
+  name: string
+  jobTitle: string
+  email: string
   avatar: string
-): IUser => ({ uuid, name, jobTitle, email, avatar });
+}
+
+// prettier-ignore
+export const makeUser = (
+  uuid: string, name: string, jobTitle: string, email: string, avatar: string
+): IUser => ({uuid, name, jobTitle, email, avatar})
 export const makeRandomUser = (): IUser =>
   makeUser(
     C.randomUUID(),
@@ -23,4 +20,4 @@ export const makeRandomUser = (): IUser =>
     C.randomJobTitle(),
     C.randomEmail(),
     I.randomAvatar()
-  );
+  )

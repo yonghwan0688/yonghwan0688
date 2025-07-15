@@ -1,41 +1,31 @@
-import type { IUser } from "./User";
-import { makeRandomUser } from "./User";
-import * as C from "./chance";
-import * as I from "./image";
-import * as D from "./date";
-import { Paragraph } from "../components";
-import { makeDayMonthYear } from "./date";
+import type {IUser} from './User'
+import {makeRandomUser} from './User'
+import * as C from './chance'
+import * as I from './image'
+import * as D from './date'
 
 export type ICard = {
-  uiid: string;
-  writer: IUser;
-  image: string;
-  title: string;
-  paragraphs: string;
-  dayMonthYearDate: string;
-  relativeDate: string | null;
-};
+  uuid: string
+  writer: IUser
+  image: string
+  title: string
+  paragraphs: string
+  dayMonthYearDate: string
+  relativeDate: string | null
+}
 
 export const makeCard = (
-  uiid: string,
+  uuid: string,
   writer: IUser,
   image: string,
   title: string,
   paragraphs: string,
   dayMonthYearDate: string,
   relativeDate: string | null
-): ICard => ({
-  uiid,
-  writer,
-  image,
-  title,
-  paragraphs,
-  dayMonthYearDate,
-  relativeDate,
-});
+): ICard => ({uuid, writer, image, title, paragraphs, dayMonthYearDate, relativeDate})
 
-export const makeRandomCard = (): ICard => {
-  const date = D.makeRandomPastDate();
+export const makeRandomCard = () => {
+  const date = D.makeRandomPastDate()
   return makeCard(
     C.randomUUID(),
     makeRandomUser(),
@@ -44,5 +34,5 @@ export const makeRandomCard = (): ICard => {
     C.randomParagraphs(5),
     D.makeDayMonthYear(date),
     D.makeRelativeDate(date)
-  );
-};
+  )
+}

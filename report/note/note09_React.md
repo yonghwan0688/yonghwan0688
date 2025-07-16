@@ -277,3 +277,137 @@ export default App;
 - 재미있게 코딩하는 게 가장 중요해요!
 
 **화이팅! 🚀✨**
+
+---
+
+## 📁 React 프로젝트 폴더 구조
+
+### 🏗️ 기본 프로젝트 구조
+
+```
+my-react-app/
+├── 📁 public/                    # 정적 파일들 (변하지 않는 파일)
+│   ├── 🌐 index.html            # 메인 HTML 파일
+│   ├── 🖼️ favicon.ico           # 브라우저 탭 아이콘
+│   ├── 🖼️ logo192.png           # 앱 로고
+│   └── 📄 manifest.json         # 앱 설정 정보
+│
+├── 📁 src/                      # 소스 코드 (우리가 작성하는 코드)
+│   ├── 📄 App.js                # 메인 컴포넌트
+│   ├── 🎨 App.css               # App 스타일
+│   ├── 📄 index.js              # 앱 시작점
+│   ├── 🎨 index.css             # 전체 스타일
+│   ├── 🖼️ logo.svg             # React 로고
+│   └── 🧪 App.test.js           # 테스트 파일
+│
+├── 📁 node_modules/             # 설치된 라이브러리들 (건드리지 마세요!)
+├── 📄 package.json              # 프로젝트 정보 & 의존성
+├── 📄 package-lock.json         # 정확한 버전 정보
+└── 📄 README.md                 # 프로젝트 설명서
+```
+
+### 🎯 실제 개발할 때 권장 구조
+
+```
+src/
+├── 📁 components/               # 재사용 가능한 컴포넌트들
+│   ├── 📄 Button.js            # 버튼 컴포넌트
+│   ├── 📄 Header.js            # 헤더 컴포넌트
+│   ├── 📄 Footer.js            # 푸터 컴포넌트
+│   └── 📄 Card.js              # 카드 컴포넌트
+│
+├── 📁 pages/                   # 페이지별 컴포넌트
+│   ├── 📄 Home.js              # 홈페이지
+│   ├── 📄 About.js             # 소개페이지
+│   └── 📄 Contact.js           # 연락처페이지
+│
+├── 📁 styles/                  # CSS 파일들
+│   ├── 🎨 global.css           # 전체 스타일
+│   └── 🎨 components.css       # 컴포넌트 스타일
+│
+├── 📁 images/                  # 이미지 파일들
+│   ├── 🖼️ banner.jpg
+│   └── 🖼️ profile.png
+│
+├── 📁 utils/                   # 유틸리티 함수들
+│   └── 📄 helpers.js           # 도움 함수들
+│
+└── 📄 App.js                   # 메인 앱
+```
+
+### 📋 각 폴더의 역할
+
+| 폴더            | 역할                 | 예시                   |
+| --------------- | -------------------- | ---------------------- |
+| **public/**     | 변하지 않는 파일들   | HTML, 아이콘, 이미지   |
+| **src/**        | 우리가 작성하는 코드 | React 컴포넌트, CSS    |
+| **components/** | 재사용 컴포넌트      | 버튼, 카드, 모달       |
+| **pages/**      | 페이지 컴포넌트      | 홈, 로그인, 마이페이지 |
+| **styles/**     | 스타일 파일들        | CSS, SCSS              |
+| **images/**     | 이미지 파일들        | PNG, JPG, SVG          |
+
+### 🔑 중요한 파일들
+
+#### 1. **src/index.js** - 앱의 시작점
+
+```jsx
+// 앱을 시작하는 파일 (건드리지 마세요!)
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+#### 2. **src/App.js** - 메인 컴포넌트
+
+```jsx
+// 여기서 주로 작업해요!
+function App() {
+  return (
+    <div>
+      <h1>내 첫 React 앱!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### 3. **public/index.html** - 기본 HTML
+
+```html
+<!-- React가 여기에 들어가요 -->
+<div id="root"></div>
+```
+
+### 💡 폴더 구조 팁
+
+#### ✅ 초보자는 이것만 신경쓰세요
+
+- **src/App.js** - 여기서 코딩해요
+- **src/App.css** - 여기서 꾸며요
+- **public/** 폴더에 이미지 넣어요
+
+#### ❌ 건드리지 마세요
+
+- **node_modules/** - 라이브러리 저장소
+- **package-lock.json** - 자동 생성 파일
+- **src/index.js** - 앱 시작점
+
+#### 🚀 프로젝트가 커지면 이렇게 정리하세요
+
+```
+src/
+├── components/
+│   ├── common/        # 공통 컴포넌트
+│   ├── forms/         # 폼 관련
+│   └── layout/        # 레이아웃 관련
+├── pages/
+├── hooks/             # 커스텀 훅
+├── context/           # 전역 상태
+├── api/               # API 관련
+└── constants/         # 상수들
+```
+
+**간단하게 시작하고 천천히 폴더를 늘려가세요! 🌱**

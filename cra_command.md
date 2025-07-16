@@ -16,3 +16,9 @@ npm install -D tailwindcss@3.4.17 postcss autoprefixer @tailwindcss/postcss dais
 postcss.config.js
 tailwind.config.js
 위 두 파일을 복사하면 이전 프로젝트의 버전을 맞출 수 있음.  -->
+
+<!-- index.css 상단에 넣기-->
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

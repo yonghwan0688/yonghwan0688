@@ -44,6 +44,36 @@ export interface RecommendationSettings {
   dietaryRestrictions: string[];
 }
 
+// 확장된 추천 설정 타입
+export interface EnhancedRecommendationSettings extends RecommendationSettings {
+  algorithm: "BFS" | "DFS" | "A_STAR" | "HYBRID";
+  searchMode: "speed" | "accuracy" | "balanced";
+  userPreferences: {
+    favoriteCategories: string[];
+    dislikedIngredients: string[];
+    moodTags: string[]; // '기분좋은', '힐링', '모험적인' 등
+  };
+  contextualFactors: {
+    occasion?: "casual" | "date" | "business" | "family";
+    groupSize?: number;
+    timeConstraint?: "quick" | "leisurely";
+  };
+}
+
+// 검색 필터 타입
+export interface SearchFilter {
+  keyword?: string;
+  fuzzySearch?: boolean;
+  category?: string;
+  cuisine?: string;
+  minRating?: number;
+  maxDistance?: number;
+  priceRanges?: number[];
+  tags?: string[];
+  openNow?: boolean;
+  weatherOptimized?: boolean;
+}
+
 // BFS/DFS 그래프 노드 타입
 export interface GraphNode {
   restaurant: Restaurant;
@@ -56,12 +86,27 @@ export interface GraphNode {
 // 추천 결과 타입
 export interface RecommendationResult {
   restaurants: Restaurant[];
-  algorithm: "BFS" | "DFS";
+  algorithm: "BFS" | "DFS" | "A_STAR" | "HYBRID";
   searchTime: number;
   totalSearched: number;
   criteria: {
     weather: WeatherInfo;
     location: UserLocation;
-    settings: RecommendationSettings;
+    settings: RecommendationSettings | EnhancedRecommendationSettings;
   };
+  metadata?: {
+    diversityScore?: number;
+    averageDistance?: number;
+    categoryDistribution?: { [category: string]: number };
+  };
+}
+
+// 사용자 피드백 타입
+export interface UserFeedback {
+  restaurantId: string;
+  rating: number; // 1-5
+  visited: boolean;
+  liked: boolean;
+  tags: string[];
+  timestamp: Date;
 }

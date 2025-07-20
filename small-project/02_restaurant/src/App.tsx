@@ -5,6 +5,9 @@ import RestaurantCard from "./components/RestaurantCard";
 import SearchBar from "./components/SearchBar";
 import { getDistance } from "./utils/distance";
 import { Restaurant } from "./types/restaurant";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import RestaurantDetail from "./pages/RestaurantDetail";
 
 function App() {
   const [userLocation, setUserLocation] = useState<{

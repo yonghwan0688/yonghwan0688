@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# 📌 프로젝트명: 식당 추천 앱 (Restaurant Recommender)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 이 프로젝트는 React 수업에서 진행된 Small Project입니다.  
+> 리액트의 기초 개념을 적용하고, 실습을 통해 웹앱 개발 경험을 쌓는 것이 목표입니다.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📆 프로젝트 기간
 
-### `npm start`
+- 시작일: 2025.07.01
+- 종료일: 2025.07.20
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🎯 주요 목표
 
-### `npm test`
+- ✅ 랜덤 식당 추천 기능 구현
+- ✅ 위치 기반 추천 기능 설계
+- ✅ 사용자 선호도(좋아하는/싫어하는 음식) 반영 기능 설계
+- ✅ React 기초 문법 및 상태 관리 실습
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ 사용 기술 스택
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| 분류       | 기술명                       |
+| ---------- | ---------------------------- |
+| 프론트엔드 | HTML, CSS, JavaScript, React |
+| 기타       | Git, GitHub                  |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧱 프로젝트 구조
 
-### `npm run eject`
+```bash
+02_restaurant/
+├── public/
+├── src/
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💡 주요 기능 설명
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### ✨ 랜덤 식당 추천
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 여러 식당 정보를 미리 저장해두고, 추천 버튼을 누르면 무작위로 식당을 보여줍니다.
 
-## Learn More
+### 📍 위치 기반 추천 (설계)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 사용자의 위치 정보를 받아, 가까운 식당을 우선적으로 추천하는 기능을 추가할 예정입니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🍽️ 사용자 선호도 반영 (설계)
+
+- 사용자가 좋아하는 음식, 싫어하는 음식 정보를 입력하면, 그에 맞는 식당을 더 똑똑하게 추천할 수 있도록 발전시킬 계획입니다.
+
+---
+
+## 🖼️ 데모 화면
+
+| 주요 화면 | 캡처 예시               |
+| --------- | ----------------------- |
+| 추천 화면 | (예시 이미지 추가 예정) |
+
+---
+
+## 🧠 회고 요약
+
+- 어려웠던 점: 위치 정보 활용 및 사용자 선호도 반영 로직 설계
+- 배운 점: React의 상태 관리와 컴포넌트 구조 이해
+- 개선하고 싶은 점: 실제 위치 기반 추천 기능 구현, UI 디자인 고도화
+
+---
+
+## 📦 배포 주소 (선택)
+
+- (추후 배포 시 추가)
+
+---
+
+## 🙋‍♀️ 개발자
+
+| 이름   | GitHub                                                     |
+| ------ | ---------------------------------------------------------- |
+| 진용환 | [github.com/yonghwan0688](https://github.com/yonghwan0688) |

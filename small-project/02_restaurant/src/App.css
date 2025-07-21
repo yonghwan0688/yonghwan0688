@@ -4,12 +4,93 @@ body {
 }
 
 .App {
-  max-width: 700px;
-  margin: 0 auto;
-  font-family: "Noto Sans KR", sans-serif;
-  background: #fafafa;
-  min-height: 100vh;
-  padding: 32px 0;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+}
+
+/* 제목 */
+.App h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* 검색바 */
+.SearchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.SearchBar input {
+  width: 60%;
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* 지도 */
+.MapView {
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 레스토랑 카드 */
+.RestaurantCard {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.RestaurantCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.RestaurantCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 18px;
+  background: #eee;
+}
+
+.RestaurantCard .info {
+  flex: 1;
+}
+
+.RestaurantCard .info h2 {
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: #222;
+}
+
+.RestaurantCard .info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.RestaurantCard .distance {
+  font-size: 0.9rem;
+  color: #0078ff;
+  font-weight: 500;
+  margin-left: 12px;
 }
 
 .restaurant-card {
@@ -31,15 +112,14 @@ body {
 }
 
 .detail-container {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: 32px;
   max-width: 600px;
-  margin: 32px auto;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px;
 }
-
 .detail-container img {
-  border-radius: 8px;
+  display: block;
   margin-bottom: 16px;
 }

@@ -1,42 +1,62 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Restaurant } from "../types/restaurant";
 
 interface Props {
   restaurant: Restaurant;
-  distance?: number; // 거리 정보 추가
+  distance?: number;
+  isFavorite?: boolean;
+  onFavorite?: (id: number) => void;
 }
 
-const RestaurantCard: React.FC<Props> = ({ restaurant, distance }) => {
+function RestaurantCard({
+  restaurant,
+  distance,
+  isFavorite,
+  onFavorite,
+}: Props) {
+  const navigate = useNavigate();
+
   return (
     <div
-      className="restaurant-card"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "16px",
-        padding: "16px",
-        borderRadius: "12px",
-        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
-        backgroundColor: "#fff",
-        marginBottom: "16px",
-      }}
+      className="RestaurantCard"
+      onClick={() => navigate(`/restaurant/${restaurant.id}`)}
+      style={{ cursor: "pointer" }}
     >
       <img
-        src={restaurant.image}
+        src={restaurant.image || "https://via.placeholder.com/80"}
         alt={restaurant.name}
-        width={150}
-        height={120}
-        style={{ borderRadius: "8px", objectFit: "cover" }}
       />
-      <div style={{ flex: 1 }}>
-        <h3 style={{ margin: "0 0 8px 0" }}>{restaurant.name}</h3>
-        <p style={{ margin: "0 0 4px 0" }}>{restaurant.address}</p>
-        <p style={{ margin: "0 0 4px 0" }}>평점: {restaurant.rating}</p>
-        {distance !== undefined && <p>거리: {distance.toFixed(2)}m</p>}
-        <p style={{ margin: "0", color: "#555" }}>{restaurant.description}</p>
+      <div className="info">
+        <h2>
+          {restaurant.name}
+          <button
+            style={{
+              marginLeft: 8,
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: isFavorite ? "#ff5252" : "#bbb",
+              fontSize: "1.2em",
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              onFavorite && onFavorite(restaurant.id);
+            }}
+            aria-label="찜"
+          >
+            ♥
+          </button>
+        </h2>
+        {restaurant.rating && <p>⭐ {restaurant.rating.toFixed(1)} / 5.0</p>}
+        {restaurant.address && <p>{restaurant.address}</p>}
+        {restaurant.phone && <p>☎ {restaurant.phone}</p>}
+        {distance !== undefined && (
+          <span className="distance">{distance.toFixed(1)}m</span>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default RestaurantCard;

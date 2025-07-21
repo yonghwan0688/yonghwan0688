@@ -8,6 +8,7 @@ import { Restaurant } from "./types/restaurant";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import RestaurantDetail from "./pages/RestaurantDetail";
+import Mapview from "./components/Mapview";
 
 function App() {
   const [userLocation, setUserLocation] = useState<{
@@ -58,6 +59,12 @@ function App() {
       <h1>내 주변 레스토랑 추천</h1>
       <SearchBar value={search} onChange={setSearch} />
       {!userLocation && <p>위치 정보를 불러오는 중...</p>}
+      {userLocation && (
+        <Mapview
+          userlocation={userLocation}
+          restaurants={filteredRestaurants.map((r) => r.restaurant)}
+        />
+      )}
       {userLocation &&
         filteredRestaurants.map(({ restaurant, distance }) => (
           <RestaurantCard

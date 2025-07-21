@@ -22,3 +22,36 @@ tailwind.config.js
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+<!-- tailwind.config.js -->
+
+/** @type {import('tailwindcss').Config} \*/
+module.exports = {
+content: ["./src/**/\*.{js,jsx,ts,tsx}"],
+theme: {
+extend: {},
+},
+plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
+};
+
+<!-- postcss.config.js -->
+
+module.exports = {
+plugins: {
+tailwindcss: {},
+autoprefixer: {},
+},
+}
+
+<!-- src/index.tsx -->
+
+import "@fontsource/material-icons";
+
+<!-- 깃허브 초기세팅 -->
+
+mkdir my-first-repo
+cd my-first-repo
+git init
+git config --global user.name "학생이름"
+git config --global user.email "학생이메일"
+touch index.html

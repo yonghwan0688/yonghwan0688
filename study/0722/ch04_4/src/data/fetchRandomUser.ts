@@ -1,28 +1,21 @@
 export type IRandomUser = {
-  name: {title: string; first: string; last: string}
   email: string
-  phone: string
+  name: {title: string; first: string; last: string}
   picture: {large: string}
 }
 
-const convertToRandomUser = (result: unknown): IRandomUser => {
-  const {name, email, phone, picture} = result as IRandomUser
-  return {
-    name,
-    email,
-    phone,
-    picture: picture
-  }
+const convertRandomUser = (result: unknown) => {
+  const {email, name, picture} = result as IRandomUser
+  return {email, name, picture}
 }
-
-export const fetchRandomUser = async (): Promise<IRandomUser> =>
+export const fetchRandomUser = (): Promise<IRandomUser> =>
   new Promise((resolve, reject) => {
     fetch('https://randomuser.me/api/')
-      .then(response => response.json())
-      .then(data => {
+      .then(res => res.json())
+      .then((data: unknown) => {
         console.log(data)
         const {results} = data as {results: IRandomUser[]}
-        resolve(convertToRandomUser(results[0]))
+        resolve(convertRandomUser(results[0]))
       })
       .catch(reject)
   })

@@ -1,13 +1,13 @@
-import ButtonTest from './pages/ButtonTest'
-import InputTest from './pages/InputTest'
-import ModalTest from './pages/ModalTest'
+import ClassLifecycle from './pages/ClassLifecycle'
+import WindowResizeTest from './pages/WindowResizeTest'
+import FetchTest from './pages/FetchTest'
 
 export default function App() {
   return (
     <main>
-      <ButtonTest />
-      <InputTest />
-      <ModalTest />
+      <FetchTest />
+      <WindowResizeTest />
+      <ClassLifecycle />
     </main>
   )
 }

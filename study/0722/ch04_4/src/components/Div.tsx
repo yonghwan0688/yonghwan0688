@@ -13,24 +13,23 @@ export type DivProps = ReactDivProps &
   MinMaxWidthHeight & {
     src?: string
   }
-
 // prettier-ignore
 export const Div: FC<DivProps> = ({
-  width, height, 
-  style: _style, 
-  src, 
-  className: _className, 
+  width, height,
+  style: _style,
+  src,
+  className: _className,
   left, right, top, bottom,
   minWidth, maxWidth, minHeight, maxHeight,
   ...props
 }) => {
   const style = {
-    ..._style, 
-    width, height, 
+    ..._style,
+    width, height,
     backgroundImage: src && `url(${src})`,
     left, right, top, bottom,
     minWidth, maxWidth, minHeight, maxHeight
   }
-  const className = ['box-border', src && 'bg-gray-300', _className].join(' ')
+  const className = ['box-sizing', src && 'bg-gray-300', _className].join(' ')
   return <div {...props} className={className} style={style} />
 }

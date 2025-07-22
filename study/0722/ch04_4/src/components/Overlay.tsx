@@ -18,7 +18,6 @@ export const Overlay: FC<OverlayProps> = ({
     opacityClass ?? 'bg-black/70',
     'flex items-center justify-center'
   ].join(' ')
-
   // prettier-ignore
   return (
     <Div {...props} className={className} top="0" left="0">{children}</Div>

@@ -9,7 +9,6 @@ type TextProps = DetailedHTMLProps<
 export type TitleProps = TextProps & {
   numberOfLines?: number
 }
-
 export const Title: FC<TitleProps> = ({
   className: _className,
   numberOfLines,

@@ -3,6 +3,7 @@ import {useCallback} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import type {AppState} from '../store'
 import type {List} from '../store/commonTypes'
+import {createSelector} from 'reselect'
 import * as LO from '../store/listidOrders'
 import * as L from '../store/listEntities'
 import * as C from '../store/cardEntities'
@@ -12,9 +13,13 @@ import * as U from '../utils'
 export const useLists = () => {
   const dispatch = useDispatch()
 
-  const lists = useSelector<AppState, List[]>(({listidOrders, listEntities}) =>
-    listidOrders.map((uuid: string) => listEntities[uuid])
+  const selectLists = createSelector(
+    (state: AppState) => state.listidOrders,
+    (state: AppState) => state.listEntities,
+    (listidOrders, listEntities) => listidOrders.map((uuid: string) => listEntities[uuid])
   )
+
+  const lists = useSelector(selectLists)
 
   const listidCardidOrders = useSelector<AppState, LC.State>(
     ({listidCardidOrders}) => listidCardidOrders

@@ -15,19 +15,19 @@ export const useCards = (listid: UUID) => {
   const onPrependCard = useCallback(() => {
     const card = D.makeRandomCard()
     dispatch(C.addCard(card))
-    dispatch(LC.prependCardidToListid({listid, cardid: card.uuid}))
+    dispatch(LC.prependCardidToListid({listed: listid, cardids: [card.uuid]}))
   }, [dispatch, listid])
 
   const onAppendCard = useCallback(() => {
     const card = D.makeRandomCard()
     dispatch(C.addCard(card))
-    dispatch(LC.appendCardidToListid({listid, cardid: card.uuid}))
+    dispatch(LC.appendCardidToListid({listed: listid, cardids: [card.uuid]}))
   }, [dispatch, listid])
 
   const onRemoveCard = useCallback(
     (uuid: UUID) => () => {
       dispatch(C.removeCard(uuid))
-      dispatch(LC.removeCardidFormListid({listid, cardid: uuid}))
+      dispatch(LC.removeCardidFormListid({listed: listid, cardids: [uuid]}))
     },
     [dispatch, listid]
   )

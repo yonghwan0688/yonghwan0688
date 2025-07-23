@@ -1,13 +1,13 @@
 import type {FC} from 'react'
 import type {List} from '../../store/commonTypes'
 import type {MoveFunc} from '../../components'
-
 import {useMemo} from 'react'
 import {Div} from '../../components'
 import {CardDroppable} from '../../components'
 import {Icon} from '../../theme/daisyui'
 import {ListDraggable} from '../../components'
 import ListCard from '../ListCard'
+import {useCards} from '../../store/useCards'
 
 // todo
 export type BoardListProps = {
@@ -22,8 +22,18 @@ const BoardList: FC<BoardListProps> = ({
   onRemoveList,
   index,
   onMoveList,
+
   ...props
 }) => {
+  const {cards} = useCards(list.uuid)
+  const children = useMemo(
+    () =>
+      cards.map(card => (
+        <ListCard key={card.uuid} card={card} draggableId={''} index={0} />
+      )),
+    [cards]
+  )
+
   return (
     <ListDraggable id={list.uuid} index={index} onMove={onMoveList}>
       <Div
@@ -38,6 +48,7 @@ const BoardList: FC<BoardListProps> = ({
           {/* todo */}
         </div>
         {/* <div className="flex flex-col p-2">{children}</div> */}
+
         <CardDroppable droppableId={list.uuid}>{children}</CardDroppable>
       </Div>
     </ListDraggable>

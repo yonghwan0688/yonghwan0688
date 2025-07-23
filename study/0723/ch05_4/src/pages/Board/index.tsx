@@ -2,7 +2,7 @@ import {useMemo} from 'react'
 import {DragDropContext} from 'react-beautiful-dnd'
 import {Title} from '../../components'
 import CreateListForm from './CreateListForm'
-import BoardList from './BoardList'
+import BoardList from '../BoardList'
 import {useLists} from '../../store/useLists'
 
 export default function Board() {
@@ -14,12 +14,12 @@ export default function Board() {
         <BoardList
           key={list.uuid}
           list={list}
-          onRemoveList={() => onRemoveList(list.uuid)}
+          onRemoveList={onRemoveList(list.uuid)}
           index={index}
           onMoveList={onMoveList}
         />
       )),
-    [lists, onRemoveList, onMoveList]
+    [lists, onMoveList, onRemoveList]
   )
 
   return (
@@ -27,8 +27,8 @@ export default function Board() {
       <Title>Board</Title>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="flex flex-wrap p-2 mt-4">
-          <CreateListForm onCreateList={onCreateList} />
           {children}
+          <CreateListForm onCreateList={onCreateList} />
         </div>
       </DragDropContext>
     </section>

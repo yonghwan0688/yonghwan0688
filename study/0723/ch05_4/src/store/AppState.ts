@@ -1,11 +1,10 @@
-import * as LO from './listidOrders/types'
-import * as L from './listEntities/types'
-import * as C from './cardEntities/types'
-import * as LC from './listidCardidOrders/types'
-
+import * as L from './listEntities'
+import * as LO from './listidOrders'
+import * as LC from './listidCardidOrders'
+import * as C from './cardEntities'
 export type AppState = {
-  listidOrders: LO.State
   listEntities: L.State
-  cardEntities: C.State
+  listidOrders: LO.State
   listidCardidOrders: LC.State
+  cardEntities: C.State
 }

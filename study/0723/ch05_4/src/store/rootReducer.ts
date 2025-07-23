@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux'
-import {reducer as listidOrders} from './listidOrders/reducers'
-import {reducer as listEntities} from './listEntities/reducers'
-import {reducer as cardEntities} from './cardEntities/reducers'
-import {reducer as listidCardidOrders} from './listidCardidOrders/reducers'
+import * as L from './listEntities'
+import * as LO from './listidOrders'
+import * as LC from './listidCardidOrders'
+import * as C from './cardEntities'
 
 export const rootReducer = combineReducers({
-  listidOrders,
-  listEntities,
-  cardEntities,
-  listidCardidOrders
+  listEntities: L.reducer,
+  listidOrders: LO.reducer,
+  listidCardidOrders: LC.reducer,
+  cardEntities: C.reducer
 })

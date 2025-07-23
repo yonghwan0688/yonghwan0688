@@ -1,6 +1,7 @@
 import type {FC} from 'react'
 import type {List} from '../../store/commonTypes'
 import type {MoveFunc} from '../../components'
+
 import {useMemo} from 'react'
 import {Div} from '../../components'
 import {CardDroppable} from '../../components'
@@ -9,7 +10,6 @@ import {ListDraggable} from '../../components'
 import ListCard from '../ListCard'
 import {useCards} from '../../store/useCards'
 
-// todo
 export type BoardListProps = {
   list: List
   onRemoveList?: () => void
@@ -22,16 +22,22 @@ const BoardList: FC<BoardListProps> = ({
   onRemoveList,
   index,
   onMoveList,
-
   ...props
 }) => {
-  const {cards} = useCards(list.uuid)
+  const {cards, onPrependCard, onAppendCard, onRemoveCard} = useCards(list.uuid)
+
   const children = useMemo(
     () =>
-      cards.map(card => (
-        <ListCard key={card.uuid} card={card} draggableId={''} index={0} />
+      cards.map((card, index) => (
+        <ListCard
+          key={card.uuid}
+          card={card}
+          onRemove={onRemoveCard(card.uuid)}
+          draggableId={card.uuid}
+          index={index}
+        />
       )),
-    [cards]
+    [cards, onRemoveCard]
   )
 
   return (
@@ -45,10 +51,20 @@ const BoardList: FC<BoardListProps> = ({
         </div>
         <div className="flex justify-between ml-2">
           <Icon name="remove" className="btn-error btn-xs" onClick={onRemoveList} />
-          {/* todo */}
+          <div className="flex">
+            <Icon
+              name="post_add"
+              className="btn-success btn-xs"
+              onClick={onPrependCard}
+            />
+            <Icon
+              name="playlist_add"
+              className="ml-2 btn-success btn-xs"
+              onClick={onAppendCard}
+            />
+          </div>
         </div>
         {/* <div className="flex flex-col p-2">{children}</div> */}
-
         <CardDroppable droppableId={list.uuid}>{children}</CardDroppable>
       </Div>
     </ListDraggable>

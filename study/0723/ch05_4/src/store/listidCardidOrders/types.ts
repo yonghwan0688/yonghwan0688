@@ -1,11 +1,10 @@
 import type {Action} from 'redux'
 import * as CT from '../commonTypes'
-export * from './actions'
 
 export type State = Record<CT.UUID, CT.UUID[]>
 
 export type SetListidCardids = Action<'@listidCardids/set'> & {
-  payload: CT.ListidCardid
+  payload: CT.ListidCardidS
 }
 
 export type RemoveListidAction = Action<'@listidCardids/remove'> & {

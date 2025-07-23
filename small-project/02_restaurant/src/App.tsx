@@ -69,50 +69,55 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <h1>내 주변 레스토랑 추천</h1>
-      <SearchBar value={search} onChange={setSearch} />
-      <div style={{ display: "flex", gap: "16px", marginBottom: "24px" }}>
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="전체">전체</option>
-          <option value="한식">한식</option>
-          <option value="이탈리안">이탈리안</option>
-          <option value="중식">중식</option>
-          <option value="양식">양식</option>
-          <option value="일식">일식</option>
-          <option value="패스트푸드">패스트푸드</option>
-        </select>
-        <label>
-          최소평점:
-          <input
-            type="number"
-            min="0"
-            max="5"
-            step="0.1"
-            value={minRating}
-            onChange={(e) => setMinRating(Number(e.target.value))}
-            placeholder="최소 평점"
+    <Router>
+      <div className="App">
+        <h1>내 주변 레스토랑 추천</h1>
+        <SearchBar value={search} onChange={setSearch} />
+        <div style={{ display: "flex", gap: "16px", marginBottom: "24px" }}>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="전체">전체</option>
+            <option value="한식">한식</option>
+            <option value="이탈리안">이탈리안</option>
+            <option value="중식">중식</option>
+            <option value="양식">양식</option>
+            <option value="일식">일식</option>
+            <option value="패스트푸드">패스트푸드</option>
+          </select>
+          <label>
+            최소평점:
+            <input
+              type="number"
+              min="0"
+              max="5"
+              step="0.1"
+              value={minRating}
+              onChange={(e) => setMinRating(Number(e.target.value))}
+              placeholder="최소 평점"
+            />
+          </label>
+        </div>
+        {!userLocation && <p>위치 정보를 불러오는 중...</p>}
+        {userLocation && (
+          <MapView
+            userLocation={userLocation}
+            restaurants={filteredRestaurants.map((r) => r.restaurant)}
           />
-        </label>
+        )}
+        {userLocation &&
+          filteredRestaurants.map(({ restaurant, distance }) => (
+            <RestaurantCard
+              key={restaurant.id}
+              restaurant={restaurant}
+              distance={distance}
+              isFavorite={favorites.includes(restaurant.id)}
+              onFavorite={toggleFavorite}
+            />
+          ))}
       </div>
-      {!userLocation && <p>위치 정보를 불러오는 중...</p>}
-      {userLocation && (
-        <MapView
-          userLocation={userLocation}
-          restaurants={filteredRestaurants.map((r) => r.restaurant)}
-        />
-      )}
-      {userLocation &&
-        filteredRestaurants.map(({ restaurant, distance }) => (
-          <RestaurantCard
-            key={restaurant.id}
-            restaurant={restaurant}
-            distance={distance}
-            isFavorite={favorites.includes(restaurant.id)}
-            onFavorite={toggleFavorite}
-          />
-        ))}
-    </div>
+    </Router>
   );
 }
 

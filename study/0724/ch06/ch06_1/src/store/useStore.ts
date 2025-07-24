@@ -7,7 +7,7 @@ import {thunk} from 'redux-thunk'
 const useLogger = process.env.NODE_ENV !== 'production'
 
 const initializeStore = () => {
-  const middleware: any[] = []
+  const middleware: any[] = [thunk]
   if (useLogger) {
     middleware.push(logger)
   }

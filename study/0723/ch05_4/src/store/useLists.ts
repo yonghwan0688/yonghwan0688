@@ -1,7 +1,6 @@
 import type {DropResult} from 'react-beautiful-dnd'
 import {useCallback} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {createSelector} from 'reselect'
 import type {AppState} from './AppState'
 import type {List} from './commonTypes'
 import * as LO from '../store/listidOrders'
@@ -13,12 +12,13 @@ import * as U from '../utils'
 export const useLists = () => {
   const dispatch = useDispatch()
 
-  // reselect를 사용하여 memoized selector 생성
-  const selectLists = createSelector(
-    [(state: AppState) => state.listidOrders, (state: AppState) => state.listEntities],
-    (listidOrders, listEntities) => listidOrders.map(uuid => listEntities[uuid])
+  // 객체에 담긴 목록을 정렬된 배열로 변환
+  // listEntities 객체에 담긴 목록을 화면에 보이게 하려면 다음처럼 listEntities의 타입 Record<UUID, List>가 아니라,
+  // 정렬된 List[] 타입 배열로 바꿔줘야 한다.
+  // listidOrders 상태, listEntities 상태, 색인 연산자([])를 이용해서 정렬된 목록(그릇) 배열을 계산한다.
+  const lists = useSelector<AppState, List[]>(({listidOrders, listEntities}) =>
+    listidOrders.map(uuid => listEntities[uuid])
   )
-  const lists = useSelector(selectLists)
   const listidCardidOrders = useSelector<AppState, LC.State>(
     ({listidCardidOrders}) => listidCardidOrders
   )

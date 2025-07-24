@@ -1,5 +1,5 @@
-import Hero from "./Hero";
-import Promotion from "./Promotion";
+import Hero from './Hero'
+import Promotion from './Promotion'
 
 export default function LandingPage() {
   return (
@@ -7,5 +7,5 @@ export default function LandingPage() {
       <Hero />
       <Promotion />
     </section>
-  );
+  )
 }

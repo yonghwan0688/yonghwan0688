@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { getPublicDirPath } from "./config";
-import { setupRouters } from "./routers";
+import { setupRouters } from "./routers/index";
 import type { MongoDB } from "./mongodb";
 
 export const createExpressApp = (db: MongoDB) => {

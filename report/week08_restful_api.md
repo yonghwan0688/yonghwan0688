@@ -1,6 +1,7 @@
 <h1>RESTful API의 개념과 설계</h1>
 
-RESTful API(Representational State Transfer API)는 자원을 HTTP 프로토콜 기반으로 정의하고, 해당 자원에 접근하거나 조작하기 위한 방식입니다. 다음은 RESTful API에 대한 핵심 개념 및 설계 방법, 그리고 Express와 MongoDB를 활용한 예제를 포함한 설명입니다.
+RESTful API(Representational State Transfer API)는 자원을 HTTP 프로토콜 기반으로 정의하고, 해당 자원에 접근하거나 조작하기 위한 방식입니다.
+다음은 RESTful API에 대한 핵심 개념 및 설계 방법, 그리고 Express와 MongoDB를 활용한 예제를 포함한 설명입니다.
 
 ---
 

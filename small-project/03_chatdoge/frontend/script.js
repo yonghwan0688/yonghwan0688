@@ -49,31 +49,53 @@ async function sendMessage() {
   userMessages.push(message);
   input.value = "";
 
-  try {
-    // 백엔드에 대화 기록을 포함하여 메시지 전송
-    const response = await fetch("http://localhost:3000/fortuneTell", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userMessages,
-        assistantMessages,
-      }),
+  function sleep(src) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, src);
     });
+  }
 
-    if (!response.ok) throw new Error(`서버 응답 오류: ${response.status}`);
+  const maxRetries = 3;
+  let retryCount = 0;
+  while (retires < maxRetries) {
+    try {
+      // 백엔드에 대화 기록을 포함하여 메시지 전송
+      const response = await fetch(
+        "https://mopj2vvqrrgofsaxnyrjkygh740wiakw.lambda-url.ap-northeast-2.on.aws//fortuneTell",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userMessages,
+            assistantMessages,
+          }),
+        }
+      );
 
-    const result = await response.json();
-    const botMessage = result.fortune;
+      if (!response.ok) throw new Error(`서버 응답 오류: ${response.status}`);
 
-    document.getElementById("loader").style.display = "none";
+      const result = await response.json();
+      const botMessage = result.fortune;
 
-    // 챗봇 응답을 화면과 대화 기록에 추가
-    addMessage(botMessage, "bot");
-    assistantMessages.push(botMessage);
-  } catch (error) {
-    console.error("메시지 전송 실패:", error);
-    addMessage("⚠️ 메시지를 보내는 데 실패했어요. 다시 시도해주세요.", "bot");
+      document.getElementById("loader").style.display = "none";
+
+      // 챗봇 응답을 화면과 대화 기록에 추가
+      addMessage(botMessage, "bot");
+      assistantMessages.push(botMessage);
+    } catch (error) {
+      console.error("메시지 전송 실패:", error);
+      addMessage("⚠️ 메시지를 보내는 데 실패했어요. 다시 시도해주세요.", "bot");
+    }
+    if (retries === 3) {
+      alert("메시지를 보내는 데 실패했습니다. 잠시 후 다시 시도해주세요.");
+      document.getElementById("loader").style.display = "none";
+    }
   }
 }
+
+const p = document.createElement("p");
+p.innerHTML =
+  '추가로 링크를 눌러 작은 정성 베풀어주세요. <a href="https://open.kakao.com/o/g0b1c5Yc" target="_blank">카카오톡 오픈채팅방</a>';
+document.getElementById("chat-container").appendChild(p);

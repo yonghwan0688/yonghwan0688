@@ -144,8 +144,10 @@ async function sendMessage() {
     const isProduction =
       window.location.hostname !== "localhost" &&
       !window.location.hostname.includes("127.0.0.1");
+
+    // 프로덕션에서는 실제 백엔드 API 주소 사용
     const endpoint = isProduction
-      ? "https://your-production-api.com/fortuneTell"
+      ? "https://your-backend-api.com/fortuneTell" // 실제 백엔드 배포 후 여기에 URL 입력
       : "http://localhost:3000/fortuneTell";
 
     const response = await fetch(endpoint, {

@@ -1,0 +1,17 @@
+{
+  "name": "test-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prehello": "echo 'prehello'",
+    "hello": "echo 'hello Node.js'",
+    "posthello": "echo 'posthello'",
+    "test": "echo 'test Node.js'",
+    "stop": "echo 'stop Node.js'",
+    "start": "echo 'start Node.js'",
+    "restart": "echo 'restart Node.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

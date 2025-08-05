@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "loadsh": "^0.0.4"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}

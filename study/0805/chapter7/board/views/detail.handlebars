@@ -1,18 +1,19 @@
 <h1>[{{title}}]</h1>
-<h2 class="text-xl">제목입니다.</h2>
+{{#with post}}
+<h2 class="text-xl">{{title}}</h2>
 <div>
   작성자:
-  <b>작성자 이름</b>
+  <b>{{author}}</b>
 </div>
 <div>
   작성일:
-  <b>2023-08-05</b>
-  <button>수정</button>
-  <button>삭제</button>
+  <b>{{createdDt}}</b>
+  <button onclick="modifyPost()">수정</button>
+  <button onclick="deletePost()">삭제</button>
 </div>
 
 <div>
-  <pre>본문</pre>
+  <pre>{{content}}</pre>
 </div>
 
 <section>
@@ -31,15 +32,12 @@
     <button type="submit">댓글쓰기</button>
   </form>
 </section>
+{{/with}}
 
 <section>
   <div>
-    <div>
-      작성자
-    </div>
-    <div>
-      작성일시
-    </div>
+    <div>작성자</div>
+    <div>작성일시</div>
     <div>
       <pre>
         comment
@@ -52,3 +50,92 @@
     <a href="/board/list">목록</a>
   </div>
 </footer>
+<script>
+  async function modifyPost() {
+    const password = prompt("비밀번호를 입력하세요");
+    if (!password) {
+      alert("비밀번호를 입력해야 합니다.");
+      return;
+    }
+
+    const result = await fetch(`/modify/${post._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password }),
+    });
+
+    if (result.ok) {
+      alert("수정이 완료되었습니다.");
+      location.reload();
+    } else {
+      alert("수정에 실패했습니다.");
+    }
+  }
+
+  async function deletePost() {
+    const password = prompt("비밀번호를 입력하세요");
+    if (!password) {
+      alert("비밀번호를 입력해야 합니다.");
+      return;
+    }
+
+    if (!confirm("정말로 삭제하시겠습니까?")) {
+      return;
+    }
+
+    const result = await fetch(`/delete/${post._id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password }),
+    });
+
+    if (result.ok) {
+      alert("삭제가 완료되었습니다.");
+      location.href = "/";
+    } else {
+      alert("삭제에 실패했습니다.");
+    }
+  }
+
+  async function deleteComment(commentId) {
+    const password = prompt("비밀번호를 입력하세요");
+    if (!password) {
+      alert("비밀번호를 입력해야 합니다.");
+      return;
+    }
+
+    if (!confirm("정말로 삭제하시겠습니까?")) {
+      return;
+    }
+
+    const result = await fetch(`/delete-comment/${commentId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password }),
+    });
+
+    if (result.ok) {
+      alert("댓글이 삭제되었습니다.");
+      location.reload();
+    } else {
+      alert("댓글 삭제에 실패했습니다.");
+    }
+  }
+
+  const data = await result.json();
+  if (data.success) {
+    alert("댓글이 작성되었습니다.");
+    location.reload();
+  } else {
+    alert("댓글 작성에 실패했습니다: " + data.message);
+  }
+
+  alert("댓글이 작성되었습니다.");
+  location.reload();
+</script>

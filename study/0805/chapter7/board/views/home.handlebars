@@ -1,8 +1,19 @@
 <h1>{{title}}</h1>
-<input type="text" name="search" id="search" value="" size="50" />
-<button>검색</button>
+<input
+  type="text"
+  name="search"
+  id="search"
+  value="{{search}}"
+  size="50"
+  placeholder="검색어를 입력하세요."
+/>
+<button
+  onclick="location.href=`/?search=${document.getElementById('search').value}`"
+>
+  검색
+</button>
 <br />
-<a href="/write"></a>
+<a href="/write">글쓰기</a>
 <br />
 <div>
   <table>
@@ -14,22 +25,28 @@
       </tr>
     </thead>
     <tbody>
+      {{#each posts}}
       <tr>
-        <td>게시글 제목</td>
-        <td>작성자</td>
-        <td>작성일</td>
+        <td>{{title}}</td>
+        <td>{{author}}</td>
+        <td>{{createdAt}}</td>
       </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>
 
 <div>
-  <a>&lt;&lt;</a>
-  <a>&lt;</a>
-  <a>1</a>
-  <a>2</a>
-  <a>3</a>
-  <a>4</a>
-  <a>&gt;</a>
-  <a>&gt;&gt;</a>
+  {{#with.paginator}}
+  <span>총 {{total}}개 글</span>
+  <span>페이지 {{current}}/{{totalPages}}</span>
+  {{/with.paginator}}
+  <a href="?page={{prevPage}}">&lt;&lt;</a>
+  <a href="?page={{prevPage}}">&lt;</a>
+  <a href="?page=1">1</a>
+  <a href="?page=2">2</a>
+  <a href="?page=3">3</a>
+  <a href="?page=4">4</a>
+  <a href="?page={{nextPage}}">&gt;</a>
+  <a href="?page={{lastPage}}">&gt;&gt;</a>
 </div>

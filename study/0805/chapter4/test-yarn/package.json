@@ -1,0 +1,9 @@
+{
+  "name": "test-yarn",
+  "packageManager": "yarn@4.9.2",
+  "dependencies": {
+    "chalk": "^5.5.0"
+  },
+  "scripts": {},
+  "type": "module"
+}

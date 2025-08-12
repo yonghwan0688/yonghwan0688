@@ -1,0 +1,34 @@
+POST http://localhost:3000/user/create
+Content-type: application/json
+
+{
+    "username": "andy",
+    "password": "test1234",
+    "email": "andy@podo.com"
+}
+
+### Get User
+GET http://localhost:3000/user/andy@podo.com
+
+### Update User
+PUT http://localhost:3000/user/andy@podo.com
+Content-type: application/json
+
+{
+    "email": "andy@podo.com",
+    "username": "andy_updated",
+    "password": "test1234_updated"
+}
+
+### Delete User
+DELETE http://localhost:3000/user/andy@podo.com
+
+### 잘못된 이메일을 입력한 경우
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username": "andy",
+    "password": "test1234",
+    "email": "invalid-email"
+}

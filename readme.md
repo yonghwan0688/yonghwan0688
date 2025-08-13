@@ -13,22 +13,26 @@
 🤝 **협업하고 싶은 프로젝트**: 혁신적인 웹 애플리케이션 개발  
 💬 **대화 주제**: JavaScript, React, Node.js, 클라우드 기술  
 ⚡ **재미있는 사실**: 코딩할 때 커피보다 음악이 더 중요해요! 🎵
+
 ## 🛠️ 기술 스택 & 도구들
 
 <div align="center">
 
 ### 🎨 프론트엔드
+
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### 🔧 백엔드 & 도구
+
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ### 🌟 현재 학습 중
+
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![AWS](https://img.shields.io/badge/-AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
@@ -52,12 +56,12 @@
 
 <div align="center">
 
-| 🎯 기술 | 📈 숙련도 | 🕒 경험 | 🔥 열정도 |
-|---------|-----------|---------|-----------|
-| JavaScript | ⭐⭐⭐ | 3개월 | 🔥🔥🔥🔥🔥 |
-| React | ⭐⭐⭐ | 3개월 | 🔥🔥🔥🔥🔥 |
-| TypeScript | ⭐⭐⭐ | 3개월 | 🔥🔥🔥🔥 |
-| Node.js | ⭐⭐⭐ | 3개월 | 🔥🔥🔥🔥 |
+| 🎯 기술    | 📈 숙련도 | 🕒 경험 | 🔥 열정도 |
+| ---------- | --------- | ------- | --------- |
+| JavaScript | ⭐⭐⭐    | 3개월   | 🔥🔥🔥🔥  |
+| React      | ⭐⭐⭐    | 3개월   | 🔥🔥🔥🔥  |
+| TypeScript | ⭐⭐⭐    | 3개월   | 🔥🔥🔥🔥  |
+| Node.js    | ⭐⭐⭐    | 3개월   | 🔥🔥🔥🔥  |
 
 </div>
 
@@ -71,6 +75,7 @@
 ## 🌈 현재 진행 중인 프로젝트
 
 🚀 **학습 프로젝트들**
+
 - 📱 반응형 웹 애플리케이션 개발
 - 🎲 로또 번호 생성기 (완성!)
 - 📊 프로그래머스 알고리즘 문제 풀이
@@ -81,11 +86,3 @@
 
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yonghwan0688)
 [![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yonghwan0688@gmail.com)
-
----
-
-💫 **"매일 조금씩, 꾸준히 성장하는 개발자"** 💫
-
-![Visitor Count](https://profile-counter.glitch.me/yonghwan0688/count.svg)
-
-</div>

@@ -211,8 +211,7 @@ function getColorForNumber(number) {
 
 **용환** - 프론트엔드 개발자
 
-- 📧 이메일: [your-email@example.com]
-- 🌐 포트폴리오: [your-portfolio-url]
+- 📧 이메일: [yonghwan0688@gmail.com](mailto:yonghwan0688@gmail.com)
 - 💼 GitHub: [@yonghwan0688](https://github.com/yonghwan0688)
 
 ## 🙏 감사의 말

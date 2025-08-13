@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { CreateUserDto } from 'src/user/user.dto';
 import { AuthService } from './auth.service';
-import { LoginGuard } from './auth.guard';
+import { AuthenticatedGuard, LoginAuthGuard, LoginGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -50,6 +50,18 @@ export class AuthController {
   @UseGuards(LoginGuard)
   @Get('test-guard')
   testGuard() {
+    return '로그인된 때만 이글이 보입니다.';
+  }
+
+  @UseGuards(LoginAuthGuard)
+  @Post('login3')
+  login3(@Request() req) {
+    return req.user;
+  }
+
+  @UseGuards(AuthenticatedGuard)
+  @Get('test-guard2')
+  testGuardWithSession(@Request() req) {
     return '로그인된 때만 이글이 보입니다.';
   }
 }

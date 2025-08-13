@@ -1,5 +1,6 @@
-import { CanActivate, Injectable } from '@nestjs/common';
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthGuard } from '@nestjs/passport';
 
 @Injectable()
 export class LoginGuard implements CanActivate {
@@ -24,5 +25,25 @@ export class LoginGuard implements CanActivate {
     }
     request.user = user;
     return true;
+  }
+}
+
+@Injectable()
+// AuthGuard 상속
+export class LoginAuthGuard extends AuthGuard('local') {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const result = (await super.canActivate(context)) as boolean;
+    //로컬스트래티지 실행
+    const request = context.switchToHttp().getRequest();
+    await super.logIn(request);
+    return result;
+  }
+}
+
+@Injectable()
+export class AuthenticatedGuard implements CanActivate {
+  canActivate(context: ExecutionContext): boolean {
+    const request = context.switchToHttp().getRequest();
+    return request.isAuthenticated();
   }
 }

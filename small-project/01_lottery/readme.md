@@ -2,9 +2,9 @@
 
 > 행운의 숫자를 찾고 계신가요? 아름다운 애니메이션과 함께 로또 번호를 뽑아보세요! 🍀
 
-## 📸 프로젝트 미리보기
+## 📸 프로젝트 체험하기
 
-![로또 추첨기 스크린샷](https://via.placeholder.com/600x400/667eea/ffffff?text=🎱+로또+추첨기)
+https://yonghwan1.netlify.app/
 
 ## 🌟 프로젝트 소개
 

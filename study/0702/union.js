@@ -1,5 +1,5 @@
 var unionObj = {
-    //   name: "Sue",
     age: 25,
+    //   name: "sue",
 };
 console.log(unionObj);

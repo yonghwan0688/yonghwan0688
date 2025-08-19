@@ -1,6 +1,6 @@
-import Basic from './Basic'
-import Size from './Size'
-import IconTest from './IconTest'
+import Basic from "./Basic";
+import Size from "./Size";
+import IconTest from "./IconTest";
 
 export default function ButtonTest() {
   return (
@@ -12,5 +12,5 @@ export default function ButtonTest() {
         <Basic />
       </div>
     </section>
-  )
+  );
 }

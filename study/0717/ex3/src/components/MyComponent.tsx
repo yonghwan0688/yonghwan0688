@@ -10,13 +10,9 @@ export default function MyComponent() {
   };
 
   return (
-    <div className="p-4 m-4 border-2 border-red-500">
-      <input
-        ref={inputRef}
-        className="border-2 border-blue-500 p-2"
-        type="text"
-      />
-      <button onClick={focusInput} className="bg-green-300 p-2 ml-2">
+    <div className="p-4 m-4 border border-red-300">
+      <input ref={inputRef} className="border border-blue-300" type="text" />
+      <button onClick={focusInput} className="bg-green-300">
         포커스 주기
       </button>
     </div>

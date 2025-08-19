@@ -1,9 +1,10 @@
+import { Title } from "../components";
 import * as D from "../data";
 import User from "./User";
 
 export default function UserContainer() {
   const children = D.makeArray(10)
-    .map(D.makeRandomUser)
+    .map((index) => D.makeRandomUser())
     .map((user) => (
       <User
         key={user.uuid}
@@ -15,8 +16,8 @@ export default function UserContainer() {
     ));
   return (
     <section className="mt-4">
-      <title>UserContainer</title>
-      <div className="flex flex-wrap items-center justify-center p-4 mt-4">
+      <Title>UserContainer</Title>
+      <div className="mt-4 flex flex-wrap items-center justify-center p-4 mt-4">
         {children}
       </div>
     </section>

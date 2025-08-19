@@ -1,4 +1,4 @@
-import {Icon} from '../../theme/daisyui'
+import { Icon } from "../../theme/daisyui";
 
 // prettier-ignore
 export default function IconTest() {

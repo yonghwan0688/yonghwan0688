@@ -4,9 +4,10 @@ class Calculator {
   }
 
   add(a: string, b: string): void {
-    return a + b;
+    console.log(a + b);
   }
 }
 
 let calculator = new Calculator();
 calculator.add(1, 2);
+calculator.add("1", "2");

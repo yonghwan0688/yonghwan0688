@@ -1,5 +1,5 @@
 function goodPromise(val) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _) => {
     resolve(val);
   });
 }
@@ -17,6 +17,6 @@ goodPromise("세상에")
   .then((val) => {
     console.log(val);
   })
-  .catch((error) => {
-    console.error("Error:", error);
+  .catch((err) => {
+    console.log(err);
   });

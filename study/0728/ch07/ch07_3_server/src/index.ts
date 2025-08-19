@@ -1,19 +1,26 @@
-import { createServer } from "http";
-import { getPublicDirPath } from "./config";
-import { makeDir } from "./utils";
-import { createExpressApp } from "./express";
+// import { createServer } from "http";
 import express from "express";
-import type { MongoDB } from "./mongodb";
-import { connectAndUseDB } from "./mongodb";
+import { insertTest } from "./test/insertTest";
+import { findTest } from "./test/findTest";
 
-makeDir(getPublicDirPath());
+const hostname = "0.0.0.0",
+  port = 3000;
 
-const connectCallback = (db: MongoDB) => {
-  const hostname = "localhost",
-    port = 3000;
+const app = express();
 
-  createServer(createExpressApp(db)).listen(port, hostname, () => {
-    console.log(`connect http://${hostname}:${port}/`);
-  });
-};
-connectAndUseDB(connectCallback, "ch07");
+app.get("/", (req, res) => {
+  findTest();
+  res.json({ message: "Hello World" });
+});
+
+app.post("/", (req, res) => {
+  insertTest();
+  res.json({ message: "Hello World" });
+});
+
+app.listen(port, hostname, () => {
+  console.log(`connect http://${hostname}:${port}`);
+});
+// createServer(app).listen(port, hostname, () => {
+//   console.log(`connect http://${hostname}:${port}`);
+// });

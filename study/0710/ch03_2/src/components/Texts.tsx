@@ -23,7 +23,10 @@ export const Title: FC<TitleProps> = ({
   return <p {...props} className={className} />;
 };
 
-export type SubtitleProps = TitleProps & {};
+export type SubtitleProps = TitleProps & {
+  numberOfLines?: number;
+};
+
 export const Subtitle: FC<SubtitleProps> = ({
   className: _className,
   numberOfLines,
@@ -36,7 +39,11 @@ export const Subtitle: FC<SubtitleProps> = ({
   );
   return <p {...props} className={className} />;
 };
-export type SummaryProps = SubtitleProps & {};
+
+export type SummaryProps = SubtitleProps & {
+  numberOfLines?: number;
+};
+
 export const Summary: FC<SummaryProps> = ({
   className: _className,
   numberOfLines,
@@ -50,7 +57,10 @@ export const Summary: FC<SummaryProps> = ({
   return <p {...props} className={className} />;
 };
 
-export type ParagraphProps = SummaryProps & {};
+export type ParagraphProps = SummaryProps & {
+  numberOfLines?: number;
+};
+
 export const Paragraph: FC<ParagraphProps> = ({
   className: _className,
   numberOfLines,

@@ -5,5 +5,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log("OK 서버시작(3000)");
+  console.log("OK 서버 시작!");
 });

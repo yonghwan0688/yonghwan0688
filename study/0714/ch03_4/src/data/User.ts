@@ -16,11 +16,13 @@ export const makeUser = (
   email: string,
   avatar: string
 ): IUser => ({ uuid, name, jobTitle, email, avatar });
-export const makeRandomUser = (): IUser =>
-  makeUser(
+
+export const makeRandomUser = (): IUser => {
+  return makeUser(
     C.randomUUID(),
     C.randomName(),
     C.randomJobTitle(),
     C.randomEmail(),
     I.randomAvatar()
   );
+};

@@ -3,16 +3,11 @@ export default function Bootstrap() {
     <form>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">
-          Email Address
+          Email address
         </label>
-        <input
-          type="email"
-          className="form-control"
-          id="exampleInputEmaail1"
-          aria-describedby="emailHelp"
-        />
+        <input type="email" className="form-control" id="exampleInputEmail1" />
         <div id="emailHelp" className="form-text">
-          We'll s=never share your email with anyone else.
+          We'll never share your email with anyone else.
         </div>
       </div>
       <div className="mb-3">
@@ -31,11 +26,11 @@ export default function Bootstrap() {
           className="form-check-input"
           id="exampleCheck1"
         />
-        <label htmlFor="form-check-label" className="exampleCheck1">
+        <label htmlFor="exampleCheck1" className="form-check-label">
           Check me out
         </label>
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-success">
         Submit
       </button>
     </form>

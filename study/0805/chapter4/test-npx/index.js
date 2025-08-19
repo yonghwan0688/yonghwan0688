@@ -1,5 +1,9 @@
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+const calc = require("sample-package");
 
-console.log(getRandomInt(10, 10));
+const a = 17;
+const b = 3;
+
+console.log("a + b = ", calc.add(a, b));
+console.log("a - b = ", calc.sub(a, b));
+console.log("a * b = ", calc.multi(a, b));
+console.log("a / b = ", calc.div(a, b));

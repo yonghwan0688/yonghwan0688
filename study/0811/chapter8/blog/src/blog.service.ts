@@ -1,35 +1,38 @@
 import { PostDto } from './blog.model';
-import { Injectible } from '@nestjs/common';
 
-// 리포지토리 클래스와 인터페이스를 가져옵니다.
-import { BlogFileRepository, BlogRepository } from './blog.repository';
-
-@Injectable()
 export class BlogService {
-  blogRepository: BlogRepository;
+  posts: PostDto[] = [];
 
-  constructor(private blogRepository: BlogRepository) {
-    // 리포지토리 인스턴스를 주입합니다.
-    this.blogRepository = blogRepository;
-  }
-
-  async getAllPosts() {
-    return await this.blogRepository.getAllPosts();
+  getAllPosts() {
+    return this.posts;
   }
 
   createPost(postDto: PostDto) {
-    return this.blogRepository.createPost(postDto);
+    const id = this.posts.length + 1;
+    this.posts.push({ ...postDto, id: id.toString(), createdDt: new Date() });
   }
 
-  async getPost(id): Promise<PostDto> {
-    return await this.blogRepository.getPostById(id);
+  getPost(id: string) {
+    const post = this.posts.find((post) => {
+      return post.id === id;
+    });
+    console.log(post);
+    return post;
   }
 
-  delete(id) {
-    return this.blogRepository.deletePost(id);
+  delete(id: string) {
+    const filteredPosts = this.posts.filter((post) => post.id !== id);
+    this.posts = [...filteredPosts];
   }
 
-  updatePost(id, postDto: PostDto) {
-    this.blogRepository.updatePost(id, postDto);
+  updatePost(id: string, postDto: PostDto) {
+    const updateIndex = this.posts.findIndex((post) => post.id === id);
+    const updatedPost = {
+      ...postDto,
+      id: id,
+      updatedDt: new Date(),
+    };
+    this.posts[updateIndex] = updatedPost;
+    return updatedPost;
   }
 }

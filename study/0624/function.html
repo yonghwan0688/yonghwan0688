@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>함수예제</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제</title>
+    <style></style>
+  </head>
+  <body>
     <script>
-    //    function greet() {
-    //     alert("반갑습니다.");
-    //    }
-    //    greet();
+      // 함수 예제
+      //   function greet() {
+      //     alert("반갑습니다!");
+      //   }
 
-    //    function showName() {
-    //     let name = "홍길동";
-    //     name = "이순신";
-    //     console.log(name);
-    //    }
-    //    showName();
+      //   greet();
 
-    //    console.log("outer", name);
+      //   function showName() {
+      //     let name = "홍길동";
+      //     name = "이순신";
+      //     console.log(name);
+      //   }
 
-    // function add(a, b) {
-    //     return a + b;
-    // }
-    // let sum = add(3, 5);
-    // console.log(sum);
+      //   showName();
 
-    // BMI 계산기
+      //   console.log("outer" + name);
 
-    weight = Number(prompt('몸무게를 입력하세요.'));
-    height = Number(prompt('키를 입력하세요.'));
-    
-    function bmiCalc(weight, height) {
-        return weight / (height * height);
-    }
+      //   function add(a, b) {
+      //     return a + b;
+      //   }
 
-    let BMI = bmiCalc(weight, height).toFixed(2);
+      //   let sum = add(3, 5);
 
-    console.log(`당신의 BMI지수는 ${BMI}입니다.`);
+      // 실습 예시: BMI 계산기
+      // 몸무게 / (키 * 키)
 
+      function calcBMI(w, h1, h2) {
+        return w / (h1 * h2);
+      }
+
+      let bmi = calcBMI(75, 1.75, 1.75);
+      console.log(bmi);
+
+      function calcBMI2(w, h) {
+        return w / (h * h);
+      }
+
+      let bmi2 = calcBMI2(75, 1.75);
+      console.log(bmi2);
     </script>
-</body>
+  </body>
 </html>

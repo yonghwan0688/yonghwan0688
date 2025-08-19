@@ -1,19 +1,24 @@
 import {
-  Body,
   Controller,
-  Get,
   Post,
-  Request,
-  Response,
+  Body,
+  Req,
+  Res,
   UseGuards,
+  Get,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/user/user.dto';
+import type { Request, Response } from 'express';
 import { AuthService } from './auth.service';
-import { AuthenticatedGuard, LoginAuthGuard, LoginGuard } from './auth.guard';
+import { CreateUserDto } from 'src/user/user.dto';
+import { AuthenticatedGuard, LocalAuthGuard, LoginGuard } from './auth.guard';
+
+interface RequestWithUser extends Request {
+  user?: any;
+}
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Post('register')
   async register(@Body() userDto: CreateUserDto) {
@@ -21,47 +26,53 @@ export class AuthController {
   }
 
   @Post('login')
-  async login(@Request() req, @Response() res) {
-    const userInfo = await this.authService.validateUser(
-      req.body.email,
-      req.body.password,
-    );
-    if (!userInfo) {
-      res.cookie('login', JSON.stringify(userInfo), {
-        httpOnly: false,
-        maxAge: 1000 * 60 * 60 * 24 * 7,
-      });
-      return res.send({ message: 'login success' });
+  async login(@Req() req: Request, @Res() res: Response) {
+    const { email, password } = req.body as { email: string; password: string };
+    const userInfo = await this.authService.validateUser(email, password);
+
+    try {
+      if (userInfo) {
+        res.cookie('login', JSON.stringify(userInfo), {
+          httpOnly: true,
+          secure: true,
+          maxAge: 1000 * 60 * 60 * 24 * 7,
+        });
+        res.send('Login successful');
+      }
+    } catch (error) {
+      console.log(error);
+      res.send('Login failed');
     }
   }
 
   @UseGuards(LoginGuard)
-  @Post('login2')
-  async login2(@Request() req, @Response() res) {
+  @Get('login2')
+  login2(@Req() req: RequestWithUser, @Res() res: Response) {
     if (!req.cookies['login'] && req.user) {
       res.cookie('login', JSON.stringify(req.user), {
         httpOnly: true,
-        maxAge: 1000 * 10,
+        secure: true,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
       });
     }
-    return res.send({ message: 'login success' });
+    return res.send({ message: 'Login2 successful' });
   }
 
   @UseGuards(LoginGuard)
   @Get('test-guard')
   testGuard() {
-    return '로그인된 때만 이글이 보입니다.';
+    return '로그인된 때만 이 글이 보입니다.';
   }
 
-  @UseGuards(LoginAuthGuard)
+  @UseGuards(LocalAuthGuard)
   @Post('login3')
-  login3(@Request() req) {
+  login3(@Req() req: RequestWithUser): any {
     return req.user;
   }
 
   @UseGuards(AuthenticatedGuard)
   @Get('test-guard2')
-  testGuardWithSession(@Request() req) {
-    return '로그인된 때만 이글이 보입니다.';
+  testGuardWithSession(@Req() req: RequestWithUser): any {
+    return req.user;
   }
 }

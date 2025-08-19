@@ -1,2 +1,0 @@
-AWS Key Management Service
-AmazonCloudWatch

@@ -1,6 +1,6 @@
 let unionObj: { name: string } | { age: number } = {
-  //   name: "Sue",
   age: 25,
+  //   name: "sue",
 };
 
 console.log(unionObj);

@@ -18,5 +18,5 @@ var books = [book, book2, book3];
 // books2.push(book2);
 // books2.push(book3);
 for (var i = 0; i < books.length; i++) {
-    console.log("\uCC45\uC774\uB984: ".concat(books[i].title, ", \uC800\uC790: ").concat(books[i].author));
+    console.log("책이름 : " + books[i].title + ", 저자 : " + books[i].author);
 }

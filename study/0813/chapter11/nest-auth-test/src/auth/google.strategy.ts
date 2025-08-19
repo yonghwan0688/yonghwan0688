@@ -1,33 +1,41 @@
-import { Injectable } from "@nestjs/common";
-import { PassportStrategy } from "@nestjs/passport";
-import { Profile, Strategy } from "passport-google-oauth20";
-import { User } from "./user.entity";
-import { UserService } from "./user.service";
+import { Injectable } from '@nestjs/common';
+import { PassportStrategy } from '@nestjs/passport';
+import {
+  Profile,
+  Strategy,
+  StrategyOptionsWithRequest,
+} from 'passport-google-oauth20';
+import { UserService } from 'src/user/user.service';
+import { User } from 'src/user/user.entity';
 
 @Injectable()
-// PassportStrategy(Strategy) 상속
-export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
+export class GoogleStrategy extends PassportStrategy(Strategy) {
   constructor(private userService: UserService) {
     super({
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.GOOGLE_CALLBACK_URL,
-      scope: ["email", "profile"],
-    });
+      callbackURL: 'http://localhost:3000/auth/google',
+      scope: ['email', 'profile'],
+    } as StrategyOptionsWithRequest);
   }
 
-  async validate(accessToken: string, refreshToken: string, profile: Profile) {
+  async validate(
+    accessToken: string,
+    refreshToken: string,
+    profile: Profile,
+  ): Promise<User> {
     const { id, name, emails } = profile;
-    console.log(accessToken);
-    console.log(refreshToken);
+    console.log('accessToken : ' + accessToken);
+    console.log('refreshToken : ' + refreshToken);
+    console.log('profile : ', profile);
 
     const providerId = id;
-    const email = emails[0].value;
+    const email = emails?.[0]?.value;
 
-    const user: User = await this.userService.findByEmailOrSave(
-      email,
-      name.familyName + name?.givenName,
-      providerId
+    const user = await this.userService.findByEmailOrSave(
+      email as string,
+      (name?.familyName as string) + (name?.givenName as string),
+      providerId,
     );
 
     return user;

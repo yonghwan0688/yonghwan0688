@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useMemo } from "react";
 import { rootReducer } from "./rootReducer";
+import { useMemo } from "react";
 
-const initialState = () => {
+const initialStore = () => {
   const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
   });
+
   return store;
 };
-export const useStore = () => {
-  const store = useMemo(() => initialState(), []);
+
+export function useStore() {
+  const store = useMemo(initialStore, []);
   return store;
-};
+}

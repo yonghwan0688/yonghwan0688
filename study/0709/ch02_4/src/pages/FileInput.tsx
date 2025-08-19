@@ -5,11 +5,12 @@ export default function FileInput() {
     const files: FileList | null = e.target.files;
     if (files) {
       for (let i = 0; i < files.length; i++) {
-        const file: File | null = files.item(i); //or file = fiels[i];
-        console.log(`files[${i}]`, file);
+        const file: File | null = files.item(i);
+        console.log(`file[${i}]:`, file);
       }
     }
   };
+
   return (
     <div>
       <p>FileInput</p>

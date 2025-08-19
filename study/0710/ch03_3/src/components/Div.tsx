@@ -11,16 +11,19 @@ export type ReactDivProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >;
+
 export type DivProps = ReactDivProps &
   PropsWithChildren<WidthHeight> &
-  LeftRightTopBottom & { src?: string };
+  LeftRightTopBottom & {
+    src?: string;
+  };
 
 export const Div: FC<DivProps> = ({
   width,
   height,
   style: _style,
-  className: _className,
   src,
+  className: _className,
   left,
   right,
   top,

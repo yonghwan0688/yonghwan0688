@@ -15,3 +15,4 @@ var car = new Car2();
 var driver = new Driver();
 driver.name = "홍길동";
 car.drive(driver);
+// car.drive(new Driver());

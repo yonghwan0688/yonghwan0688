@@ -1,5 +1,5 @@
 class User2 {
-  userName: string;
+  username: string;
 }
 
 class Product {
@@ -12,13 +12,13 @@ class Order {
 
   summary() {
     console.log(
-      `사용자 ${this.user.userName}가 ${this.product.productName}을 주문했습니다.`
+      `사용자 ${this.user.username}가 ${this.product.productName} 을 주문했습니다.`
     );
   }
 }
 
 let user2 = new User2();
-user2.userName = "홍길동";
+user2.username = "홍길동";
 
 let product = new Product();
 product.productName = "책";

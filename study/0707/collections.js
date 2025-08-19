@@ -13,6 +13,10 @@ console.log(map.size);
 map.delete("age");
 console.log(map);
 
+for (const val of set) {
+  console.log(val);
+}
+
 for (const [key, val] of map) {
   console.log(key, val);
 }

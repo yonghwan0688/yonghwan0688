@@ -2,8 +2,8 @@ import type { FC } from "react";
 
 export type IconProps = {
   name: string;
-  className: string;
-  style: React.CSSProperties;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
 export const Icon: FC<IconProps> = ({ name, style }) => {

@@ -1,3 +1,6 @@
+// Header, Content, Footer 컴포넌트에서 각각 다른 텍스트 표시
+// 언어 변경 버튼 구현
+
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";

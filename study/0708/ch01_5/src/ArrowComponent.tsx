@@ -5,7 +5,8 @@ type ArrowComponentProps = {
   text: string;
 };
 
-const ArrowComponent: FC<ArrowComponentProps> = ({ href, text }) => {
+const ArrowComponent: FC<ArrowComponentProps> = (props) => {
+  const { href, text } = props;
   return (
     <li>
       <a href={href}>
@@ -14,5 +15,4 @@ const ArrowComponent: FC<ArrowComponentProps> = ({ href, text }) => {
     </li>
   );
 };
-
 export default ArrowComponent;

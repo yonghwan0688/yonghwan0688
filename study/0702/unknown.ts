@@ -1,8 +1,8 @@
 let value2: unknown = 10;
-value2 = "hello";
+value2 = "hello"; // OK
 // console.log(value);
 
-value2 = new Array(); // [], Array(), new Array, new Array(10)
+value2 = new Array(); // [], Array(), new Array(), new Array(10)
 if (value2 instanceof Array) {
   value2.push(33);
 }

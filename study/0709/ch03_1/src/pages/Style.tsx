@@ -7,7 +7,7 @@ export default function Style() {
       </span>
       <span
         className="material-icons"
-        style={{ fontSize: "500px", color: "red" }}
+        style={{ fontSize: "250px", color: "red" }}
       >
         check_circle_outline
       </span>

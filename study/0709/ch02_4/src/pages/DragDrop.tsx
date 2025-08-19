@@ -1,13 +1,17 @@
 import type { DragEvent } from "react";
 
 export default function DragDrop() {
-  const onDragStart = (e: DragEvent<HTMLElement>) =>
-    console.log(`onDragStart`, e.dataTransfer);
+  const onDragStart = (e: DragEvent<HTMLElement>) => {
+    console.log("onDrageStart", e.dataTransfer);
+  };
 
-  const onDragEnd = (e: DragEvent<HTMLElement>) =>
-    console.log(`onDragEnd`, e.dataTransfer);
+  const onDragEnd = (e: DragEvent<HTMLElement>) => {
+    console.log("onDrageEnd", e.dataTransfer);
+  };
 
-  const onDragOver = (e: DragEvent) => e.preventDefault();
+  const onDragOver = (e: DragEvent) => {
+    e.preventDefault();
+  };
 
   const onDrop = (e: DragEvent) => {
     e.preventDefault();
@@ -17,11 +21,11 @@ export default function DragDrop() {
   return (
     <div>
       <p>DragDrop</p>
-      <div draggable onDragStart={onDragStart} onDragEnd={onDragEnd}>
+      <div draggable onDragStart={onDragStart} onDragEnter={onDragEnd}>
         <h1>Drag Me</h1>
       </div>
       <div onDrop={onDrop} onDragOver={onDragOver}>
-        <h1>Drag over Me</h1>
+        <h1>Drop over Me</h1>
       </div>
     </div>
   );

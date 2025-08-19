@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fontsource/material-icons": "^5.0.7",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@fontsource/material-icons": "^5.2.5",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.66",
-    "@types/react": "^18.2.40",
-    "@types/react-dom": "^18.2.17",
-    "chance": "^1.1.11",
-    "luxon": "^3.4.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "chance": "^1.1.13",
+    "luxon": "^3.7.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -45,11 +46,11 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@types/chance": "^1.1.6",
-    "@types/luxon": "^3.3.6",
-    "autoprefixer": "^10.4.16",
-    "daisyui": "4.12.12",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.5"
+    "@types/chance": "^1.1.7",
+    "@types/luxon": "^3.6.2",
+    "autoprefixer": "^10.4.21",
+    "daisyui": "^5.0.46",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }

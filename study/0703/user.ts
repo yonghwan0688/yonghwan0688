@@ -4,7 +4,7 @@ class User {
   constructor(name: string) {
     this.name = name;
   }
-  //   constructor(public name: string) {} *최근 추가된 문법
+  //   constructor(public name: string) {}
 
   greet() {
     console.log(`안녕하세요, 제 이름은 ${this.name}입니다.`);

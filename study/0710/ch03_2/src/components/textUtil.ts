@@ -7,4 +7,4 @@ export const makeClassName = (
     setting,
     numberOfLines ? `line-clamp-${numberOfLines}` : "",
     _className,
-  ].join("");
+  ].join(" ");

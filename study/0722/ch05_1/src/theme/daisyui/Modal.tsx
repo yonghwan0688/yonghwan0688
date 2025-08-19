@@ -15,6 +15,7 @@ export type ModalContentProps = ReactDivProps & {
   onCloseIconClicked?: () => void
   closeIconClassName?: string
 }
+
 export const ModalContent: FC<ModalContentProps> = ({
   onCloseIconClicked,
   closeIconClassName: _closeIconClassName,

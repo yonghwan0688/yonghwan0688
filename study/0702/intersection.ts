@@ -1,5 +1,5 @@
 let obj: { name: string } & { age: number } = {
-  name: "John",
-  age: 33,
+  name: "tom",
+  age: 25,
 };
 console.log(obj);

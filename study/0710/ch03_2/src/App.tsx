@@ -4,9 +4,9 @@ import TextsTest from "./pages/TextsTest";
 
 export default function App() {
   return (
-    <>
-      <Tailwindcss />
+    <div>
+      {/* <Tailwindcss /> */}
       <TextsTest />
-    </>
+    </div>
   );
 }

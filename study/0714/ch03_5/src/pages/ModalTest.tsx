@@ -1,11 +1,11 @@
-import {Title, Subtitle} from '../components'
-import {Modal, ModalContent, ModalAction, Button} from '../theme/daisyui'
-import * as D from '../data'
+import { Title, Subtitle } from "../components";
+import { Modal, ModalContent, ModalAction, Button } from "../theme/daisyui";
+import * as D from "../data";
 
 export default function ModalTest() {
-  const open = true
-  const closeClicked = () => alert('closeClicked')
-  const acceptClicked = () => alert('acceptClicked')
+  const open = true;
+  const closeClicked = () => alert("closeClicked");
+  const acceptClicked = () => alert("acceptClicked");
   return (
     <section className="mt-4">
       <Title>ModalTest</Title>
@@ -16,7 +16,8 @@ export default function ModalTest() {
           <ModalAction>
             <Button
               className="w-24 normal-case btn-primary btn-sm"
-              onClick={acceptClicked}>
+              onClick={acceptClicked}
+            >
               Accept
             </Button>
             <Button className="w-24 normal-case btn-sm" onClick={closeClicked}>
@@ -26,5 +27,5 @@ export default function ModalTest() {
         </ModalContent>
       </Modal>
     </section>
-  )
+  );
 }

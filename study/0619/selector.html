@@ -3,42 +3,50 @@
   <head>
     <title>DOM 구조 예시</title>
     <style>
-        input:hover {
-            background-color: red;
-        }
+      h1 + p {
+        color: green;
+      }
 
-        input:focus {
-            background-color: blue;
-        }
+      img[src^="2mage"] {
+        background-color: green;
+      }
 
-        input:active {
-            background-color: yellow;
-        }
+      input:hover {
+        background-color: red;
+      }
 
-        p:nth-child(odd) {
-            background-color: red;
-        }
+      input:focus {
+        background-color: blue;
+      }
 
-        p:nth-child(even) {
-            background-color: blue;
-        }
+      input:active {
+        background-color: yellow;
+      }
 
-        p:first-child {
-            background-color: green;
-        }
+      p:nth-child(odd) {
+        background-color: red;
+      }
 
-        p:last-child {
-            background-color: yellow;
-        }
+      p:nth-child(even) {
+        background-color: blue;
+      }
 
-        p:nth-child(2n + 1) {
-            background-color: pink;
-        }
+      p:first-child {
+        background-color: green;
+      }
 
-        div > p:nth-child(2n + 1) > strong {
-            font-weight: bold;
-            color: orange;
-        }
+      p:last-child {
+        background-color: black;
+      }
+
+      p:nth-child(3n + 1) {
+        background-color: pink;
+      }
+
+      div > p:nth-child(3n + 1) > strong {
+        font-weight: bold;
+        color: orange;
+      }
     </style>
   </head>
   <body>
@@ -51,10 +59,11 @@
         <p><strong>첫 번째 단락 강조</strong></p>
         <p><strong>두 번째 단락 강조</strong></p>
         <p><strong>세 번째 단락 강조</strong></p>
-        <p><strong>네 번째 단락 강조</strong></p>
-        <p><strong>다섯 번째 단락 강조</strong></p>
-        <p><strong>여섯 번째 단락 강조</strong></p>
-        <!-- <input type="text"> -->
+        <p><strong>첫 번째 단락 강조</strong></p>
+        <p><strong>두 번째 단락 강조</strong></p>
+        <p><strong>세 번째 단락 강조</strong></p>
+
+        <!-- <input type="text" /> -->
       </div>
     </section>
   </body>

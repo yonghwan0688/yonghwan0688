@@ -5,11 +5,11 @@
     <style>
       h1,
       h3 {
-        color: red; /*글자색이 빨간색이다.*/
+        color: red;
       }
 
       .subTitle {
-        background-color: yellow; /*배경색이 노란색이다.*/
+        background-color: yellow;
       }
 
       .card {
@@ -31,9 +31,9 @@
       }
 
       .cardButton {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
         border: none;
+        color: white;
         border-radius: 10px;
         font-size: 20px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -65,7 +65,7 @@
       <p>This is inner card.</p>
     </div>
 
-    .... ....
+    ... ...
 
     <div class="card">
       <p>This is second inner card.</p>
@@ -85,25 +85,32 @@
           <p>This is table example.</p>
           <p>This is table example.</p>
           <p>This is table example.</p>
+          <form>
+            <p>This is table example.</p>
+            <p>This is table example.</p>
+            <p>This is table example.</p>
+            <p>This is table example.</p>
+            <p>This is table example.</p>
+          </form>
         </form>
       </form>
       <table style="width: 500px; border: 1px solid black">
         <tr>
-          <td style="width: 100px">Name</td>
+          <td style="width: 100px">Name:</td>
           <td style="width: 400px">
             <input type="text" name="name" />
           </td>
         </tr>
 
         <tr>
-          <td>E_mail</td>
+          <td>E_mail:</td>
           <td>
             <input type="text" name="email" />
           </td>
         </tr>
 
         <tr>
-          <td>Message</td>
+          <td>Message:</td>
           <td>
             <textarea name="message" rows="8"></textarea>
           </td>
@@ -112,7 +119,7 @@
         <tr>
           <td></td>
           <td>
-            <button class="cardButton" type="submit">Submit</button>
+            <button type="submit" class="cardButton">Submit</button>
           </td>
         </tr>
       </table>

@@ -1,11 +1,11 @@
-console.log("Hello World!");
+console.log("Hello World!!!");
 function greet(name) {
     return "Hello, ".concat(name);
 }
-console.log(greet("john"));
+console.log(greet("John"));
 var n = 1;
 var b = true;
-var s = "hello";
+var s = "Hello";
 var o = {};
 var n1 = 1;
 var b1 = true;

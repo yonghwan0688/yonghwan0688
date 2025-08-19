@@ -3,6 +3,7 @@ import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
 import {useStore} from './store'
 import Board from './pages/Board'
+import React from 'react'
 
 export default function App() {
   const store = useStore()

@@ -3,9 +3,9 @@ let count = 0;
 
 const server = http.createServer((req, res) => {
   log(count);
-  res.statutsCode(200);
+  res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
-  res.write("Hello\n");
+  res.write("Hello World\n");
   setTimeout(() => {
     res.end("Node.js");
   }, 2000);
@@ -16,5 +16,5 @@ function log(count) {
 }
 
 server.listen(8000, () => {
-  console.log("Hello, Node.js!");
+  console.log("Hello Node.js");
 });

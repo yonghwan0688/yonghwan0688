@@ -9,11 +9,10 @@ export default function AvatarTest() {
       src={D.randomAvatar()}
     />
   ));
-
   return (
     <section className="mt-4">
-      <title>AvatarTest</title>
-      <div className="px-12 py-4 m-8 bg-blue-300">{avatars}</div>
+      <Title>AvatarTest</Title>
+      <Div className="mt-4">{avatars}</Div>
     </section>
   );
 }

@@ -1,4 +1,11 @@
-class Person {
+class Person2 {
+  // name: string;
+  // age: number;
+
+  // constructor(name: string, age: number) {
+  //     this.name = name;
+  //     this.age = age;
+  // }
   constructor(public name: string, private age: number) {}
 
   introduce(): string {
@@ -8,11 +15,11 @@ class Person {
 
 class Car implements Vehicle {
   carModel: string;
-  carOwner: string;
+  owner: string;
   carWeight: number;
   buyYear: number;
   isSunk: boolean;
-  distancde: number;
+  distance: number;
 
   drive() {
     console.log("Go");
@@ -30,12 +37,16 @@ class Car implements Vehicle {
     console.log("Wipe");
   }
 
-  brake() {
+  break() {
     console.log("Break");
   }
 
   accelerate() {
-    console.log("accelerate");
+    console.log("Accelerate");
+  }
+
+  trunck() {
+    console.log("Trunck");
   }
 }
 
@@ -44,6 +55,7 @@ class DumpTruck extends Car {
   operate() {
     console.log("Operate");
   }
+
   spread() {
     console.log("Spread");
   }
@@ -55,20 +67,20 @@ class Bus extends Car {
 
   constructor(passenger: number, busNumber: number) {
     super();
-    console.log("");
+    console.log("Bus constructor");
   }
 
   openDoor() {
     console.log("Open Door");
   }
 
-  trunk() {
+  trunck() {
     console.log("");
   }
 }
 
 interface Vehicle {
-  brake(): void;
+  break(): void;
   accelerate(): void;
-  trunk(): void;
+  trunck(): void;
 }

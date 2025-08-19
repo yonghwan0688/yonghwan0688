@@ -3,11 +3,9 @@ import { makeRandomUser } from "./User";
 import * as C from "./chance";
 import * as I from "./image";
 import * as D from "./date";
-import { Paragraph } from "../components";
-import { makeDayMonthYear } from "./date";
 
 export type ICard = {
-  uiid: string;
+  uuid: string;
   writer: IUser;
   image: string;
   title: string;
@@ -17,7 +15,7 @@ export type ICard = {
 };
 
 export const makeCard = (
-  uiid: string,
+  uuid: string,
   writer: IUser,
   image: string,
   title: string,
@@ -25,7 +23,7 @@ export const makeCard = (
   dayMonthYearDate: string,
   relativeDate: string | null
 ): ICard => ({
-  uiid,
+  uuid,
   writer,
   image,
   title,
@@ -34,7 +32,7 @@ export const makeCard = (
   relativeDate,
 });
 
-export const makeRandomCard = (): ICard => {
+export const makeRandomCard = () => {
   const date = D.makeRandomPastDate();
   return makeCard(
     C.randomUUID(),

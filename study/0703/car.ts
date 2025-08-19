@@ -12,3 +12,4 @@ let car = new Car2();
 let driver = new Driver();
 driver.name = "홍길동";
 car.drive(driver);
+// car.drive(new Driver());

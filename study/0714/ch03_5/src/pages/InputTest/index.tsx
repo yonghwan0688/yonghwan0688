@@ -1,7 +1,7 @@
-import Basic from './Basic'
-import Color from './Color'
-import Border from './Border'
-import Size from './Size'
+import Basic from "./Basic";
+import Color from "./Color";
+import Border from "./Border";
+import Size from "./Size";
 
 export default function inputTest() {
   return (
@@ -14,5 +14,5 @@ export default function inputTest() {
         <Basic />
       </div>
     </section>
-  )
+  );
 }

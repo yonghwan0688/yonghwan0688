@@ -6,16 +6,15 @@ export type ConnectCallback = (db: MongoDB) => void;
 export const connectAndUseDB = async (
   callback: ConnectCallback,
   dbName: string,
-  mongoUrl: string = "mongodb://localhost:27017"
+  mongoUrl: string = "mongodb://127.0.0.1:27017"
 ) => {
-  let conncection;
+  let connection;
   try {
-    conncection = await MongoClient.connect(mongoUrl);
-    const db = conncection.db(dbName);
+    connection = await MongoClient.connect(mongoUrl);
+    const db: Db = connection.db(dbName);
     callback(db);
   } catch (e) {
-    if (e instanceof Error) {
-      console.log(e.message);
-    }
+    console.error("Error connecting to MongoDB:", e);
+    throw e;
   }
 };

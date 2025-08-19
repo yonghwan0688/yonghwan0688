@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";
 
@@ -16,13 +16,13 @@ export default function Content() {
   return (
     <main
       style={{
-        backgroundColor: theme === "light" ? "#f0f0f0" : "#222",
+        backgroundColor: theme === "light" ? "#f5f5f5" : "#222",
         color: theme === "light" ? "#333" : "#fff",
         padding: "1rem",
       }}
     >
-      <p>현재테마: {theme}</p>
-      <p>현재언어: {language}</p>
+      <p>현재 테마: {theme}</p>
+      <p>현재 언어: {language}</p>
     </main>
   );
 }

@@ -6,7 +6,7 @@ export const multerOptions = {
   storage: diskStorage({
     destination: join(__dirname, '..', 'uploads'),
     filename: (req, file, cb) => {
-      cb(null, randomUUID() + extname(file.originalname));
+      cb(null, `${randomUUID()}${extname(file.originalname)}`);
     },
   }),
 };

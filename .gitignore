@@ -87,3 +87,7 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# AWS keys
+*.pem
+aws-key.pem

@@ -8,12 +8,12 @@ import {connectAndUseDB} from './mongodb'
 makeDir(getPublicDirPath())
 
 const connectCallback = (db: MongoDB) => {
-  const hostname = 'localhost',
+  const hostname = '0.0.0.0',
     port = 4000
 
-  createServer(createExpressApp(db)).listen(port, () =>
+  createServer(createExpressApp(db)).listen(port, hostname, () =>
     console.log(`connect http://${hostname}:${port}`)
   )
 }
 
-connectAndUseDB(connectCallback, 'ch07', 'mongodb://192.168.0.20:27017')
+connectAndUseDB(connectCallback, 'mydb', 'mongodb://localhost:27017')

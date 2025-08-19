@@ -1,3 +1,6 @@
 {
-  "recommendations": ["google.geminicodeassist", "yandeu.five-server"]
+  "recommendations": [
+    "google.geminicodeassist",
+    "yandeu.five-server"
+  ]
 }

@@ -31,6 +31,9 @@ export const authRouter = (...args: any[]) => {
     })
     .post('/login', async (req, res) => {
       const {authorization} = req.headers || {}
+      console.log('req.headers', req.headers)
+      console.log('authorization', authorization)
+      console.log('req.body', req.body)
       if (!authorization) {
         res.json({ok: false, errorMessage: 'JSON 토큰이 없습니다.'})
         return

@@ -1,0 +1,67 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: tmdgenai1
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: photo-optimize-students17
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: photo-optimize-students17
+
+# provider:
+#   name: aws
+#   runtime: nodejs20.x
+
+# functions:
+#   hello:
+#     handler: handler.hello
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-northeast-2
+  deploymentBucket:
+    name: tmd-genai1-students17
+    blockPublicAccess: true
+    serverSideEncryption: AES256
+  memorySize: 1024
+  timeout: 10
+  environment:
+    DEST_BUCKET: ${self:service}-optimized-bucket-${sls:stage}-${aws:accountId}
+    UPLOAD_BUCKET: ${self:service}-upload-bucket-${sls:stage}-${aws:accountId}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource:
+        - arn:aws:s3:::${self:provider.environment.UPLOAD_BUCKET}/*
+        - arn:aws:s3:::${self:provider.environment.DEST_BUCKET}/*
+
+functions:
+  optimize:
+    # 고유 함수명으로 충돌 회피
+    name: ${self:service}-${sls:stage}-${aws:accountId}-optimize
+    handler: handler.optimize
+    # 로그 보관기간(선택)
+    logRetentionInDays: 7
+    events:
+      - s3:
+          bucket: ${self:provider.environment.UPLOAD_BUCKET} # 이건 자동 생성됨
+          event: s3:ObjectCreated:*
+
+resources:
+  Resources:
+    DestBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:provider.environment.DEST_BUCKET}
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
+          RestrictPublicBuckets: true
+
+package:
+  patterns:
+    - "!node_modules/sharp/vendor/8.*"
+    - "!node_modules/sharp/vendor/lib"
+    - "node_modules/sharp/lib/**"
+    - "node_modules/sharp/vendor/**"

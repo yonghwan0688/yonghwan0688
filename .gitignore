@@ -91,3 +91,84 @@ Thumbs.db
 # AWS keys
 *.pem
 aws-key.pem
+
+# MongoDB data and logs
+**/mongo-data/
+**/data/db/
+*.wt
+**/diagnostic.data/
+**/journal/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+
+# C/C++
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Compiled output
+/dist/
+/tmp/
+/out-tsc/
+
+# Package files
+*.tgz
+*.tar.gz
+*.zip
+*.rar
+
+# Test coverage
+/coverage/
+.nyc_output/
+
+# Runtime data
+pids/
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage/
+/libpeerconnection.log
+testem.log
+/typings

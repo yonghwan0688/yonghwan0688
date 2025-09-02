@@ -1,0 +1,12 @@
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 20px;
+  text-align: right;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+}

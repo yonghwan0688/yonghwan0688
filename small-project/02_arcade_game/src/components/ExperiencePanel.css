@@ -1,0 +1,80 @@
+.experience-panel {
+  background: #374151;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.color-circles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.color-circle.red {
+  background: #ef4444;
+}
+
+.color-circle.blue {
+  background: #3b82f6;
+}
+
+.color-circle.yellow {
+  background: #f59e0b;
+}
+
+.color-circle.white {
+  background: #f3f4f6;
+}
+
+.experience-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.experience-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.years {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.experience-text {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 150px;
+}
